@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --font-principal: 'Roboto', sans-serif;
+}
+
+body{
+    background-image: url("../assets/imagem_fundo1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+}
+
+.pagina{
+    display: flex;
+    justify-content: flex-end;
+    height: 100vh;
+    
+
+}
+.pagina_loguin{
+
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0,.6);
+    border-left: solid 0.1px white ;
+    padding: 9% 5% 5% 5%;
+    
+}
+
+.pagina_loguin_logo{
+    width: 50%;
+}
+
+.pagina_loguin_input{
+
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px;
+    box-shadow: none;
+    background: none;
+    outline: none;
+    color: aliceblue;
+    font-size: 1rem;
+    font-family: var(--font-principal);
+
+}
+
+input::placeholder{
+
+    font-size: 1rem;
+    color: whitesmoke;
+    font-family: var(--font-principal);
+
+}
+
+.pagina_loguin_bottom{
+    padding: 5% 40%;
+    border-radius: 24.04px;
+    background: none;
+    color: aliceblue;
+    border: solid 1px;
+    font-family: var(--font-principal);
+    
+}
+
+.pagina_loguin_bottom:hover{
+    background-color: whitesmoke;
+    color: black;
+    
+}
+
+.cadastro{
+    text-decoration: none;
+    font-family: var(--font-principal);
+    color: whitesmoke;
+}
+
+.cadastro:hover{
+
+    color: rgb(44, 44, 44);
+}
