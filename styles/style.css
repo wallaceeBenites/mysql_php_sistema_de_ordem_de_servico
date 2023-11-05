@@ -16,6 +16,7 @@ body{
     color: aliceblue;
 }
 
+/* pagina de loguin e cadastro  */
 .pagina{
     display: flex;
     justify-content: flex-end;
@@ -33,6 +34,43 @@ body{
     border-left: solid 0.1px white ;
     padding: 9% 5% 5% 5%;
     
+}
+
+.pagina_loguin_cadastro{
+
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0,.6);
+    border-left: solid 0.1px white ;
+    padding: 7% 5% 5% 5%;
+
+}
+
+.pagina_loguin_cadastro_sexo{
+    background: none;
+    color: whitesmoke;
+    padding: 0;
+    font-family: var(--font-principal);
+    border: none;
+    border-bottom: solid 2px;
+    font-size: 1rem;
+    box-shadow: none;
+    outline: none;
+}
+
+.pagina_loguin_cadastro_sexo_option{
+
+    background: none;
+    background-color: black;
+    color: whitesmoke;
+    padding: 0;
+    font-family: var(--font-principal);
+    border: none;
+    border-bottom: solid 2px;
+    font-size: 1rem;
+
 }
 
 .pagina_loguin_logo{
@@ -86,4 +124,44 @@ input::placeholder{
 .cadastro:hover{
 
     color: rgb(44, 44, 44);
+}
+
+/* pagina princiapal home  */
+
+.cabecalho{
+
+    background-color: rgba(0,0,0,.6);
+    margin: 0% 10%; 
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+
+}
+
+.cabecalho_menu{
+    display: flex;
+    gap: 39%;
+}
+
+.cabecalho__menu__link{
+    color: whitesmoke;
+    padding: 2%;
+    text-decoration: none;
+    font-family: var(--font-principal);
+}
+
+.home{
+    background-color: rgba(0,0,0,.6);
+    margin: 0% 10%; 
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+    height: 90vh;
+}
+
+table{
+    border: solid 1px;
+    padding: 16% 39%;
+}
+
+.home_chat_textarea{
+    
 }
