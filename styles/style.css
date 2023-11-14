@@ -135,11 +135,14 @@ input::placeholder{
     border-left: 1px solid whitesmoke;
     border-right: 1px solid whitesmoke;
 
+
 }
 
 .cabecalho_menu{
     display: flex;
-    gap: 39%;
+    gap: 10%;
+        justify-content: space-between;
+
 }
 
 .cabecalho__menu__link{
@@ -149,19 +152,38 @@ input::placeholder{
     font-family: var(--font-principal);
 }
 
-.home{
+.pefil{
     background-color: rgba(0,0,0,.6);
     margin: 0% 10%; 
     border-left: 1px solid whitesmoke;
     border-right: 1px solid whitesmoke;
     height: 90vh;
-}
-
-table{
-    border: solid 1px;
-    padding: 16% 39%;
-}
-
-.home_chat_textarea{
     
+}
+
+.pefil_chat{
+    display: flex;
+    align-items: center;
+    padding: 0% 0% 0% 25%;
+}
+
+
+.pefil_chat_foto{
+
+    width: 30%;
+    border-radius: 50%;
+    padding: 2%;
+}
+
+
+
+@media(max-width: 1200px){
+
+    .cabecalho_menu{
+        
+        gap: 10%;
+        
+    
+    }
+
 }
