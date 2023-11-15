@@ -7,6 +7,11 @@
 
 :root{
     --font-principal: 'Roboto', sans-serif;
+    --cor-branca-principal: whitesmoke;
+    --cor-tranparente: rgba(0,0,0,.6);
+}
+html{
+
 }
 
 body{
@@ -14,6 +19,18 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+::-webkit-scrollbar{
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(104, 104, 104);
+    border-radius: 18px;
 }
 
 /* pagina de loguin e cadastro  */
@@ -152,14 +169,29 @@ input::placeholder{
     font-family: var(--font-principal);
 }
 
-.pefil{
+.cabecalho__menu__link:hover{
+    color: chartreuse;
+}
+
+.conteiner{
     background-color: rgba(0,0,0,.6);
-    margin: 0% 10%; 
+    margin: 0% 10%;
     border-left: 1px solid whitesmoke;
     border-right: 1px solid whitesmoke;
-    height: 90vh;
     
+
 }
+
+.conteiner2{
+    background-color: rgba(0,0,0,.6);
+    margin: 0% 10%;
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+    height: 100%;
+
+}
+
+
 
 .pefil_chat{
     display: flex;
@@ -170,10 +202,164 @@ input::placeholder{
 
 .pefil_chat_foto{
 
-    width: 30%;
+    width: 25%;
     border-radius: 50%;
     padding: 2%;
 }
+.pefil_chat_info{
+    font-family: var(--font-principal);
+}
+
+.perfil_chamado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfil_chamado_tabela{
+    margin: auto;
+    border: 1px solid whitesmoke;
+    padding: 0%;
+    border-radius: 12px;
+    width: 90%;
+    font-family: var(--font-principal);
+    font-weight: 400;
+
+
+
+    
+}
+
+td{
+    padding: 1% 2%;
+    
+    border-bottom: 1px solid whitesmoke; 
+    border-left: 20px solid rgba(0,0,0,.0);  
+    
+}
+
+.perfil_chamado_tabela_linha{
+    color: chartreuse;
+}
+
+.logo_chamado{
+    width: 10%;
+}
+
+.criar_chamado{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /* border: 0.5px solid whitesmoke; */
+    margin: 0% 15%;
+    border-radius: 18px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.tipo_servico_prioridade{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 80px;
+    margin: 2% 0% 0% 0%;
+    
+}
+
+.tipo_servico_prioridade_subtitulo{
+    font-family: var(--font-principal);
+    font-size: 1rem;
+}
+
+.tipo_servico{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+
+.prioridade{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+.chamado_select{
+    background-color: rgba(0,0,0,.4);
+    color: var(--cor-brnca-principal);
+    border: none;
+    font-family: var(--font-principal);
+    outline: none;
+    padding: 2%;
+    border-radius: 16px;
+    font-size: 1rem;
+}
+
+.chamado_select:hover{
+    
+    background-color: black;
+    border-radius: 16px;
+}
+
+
+
+.descricao{
+    padding: 2% 0% 0% 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.descricao_textarea{
+    padding: 0% 0% ;
+    margin: 0% 0% 5% 0%;
+    background-color: rgba(0,0,0,.4);
+    color: whitesmoke;
+    font-family: var(--font-principal);
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 16px;
+    box-shadow: none;
+    outline: none;
+    resize: none;
+    
+}
+
+.descricao_textarea::placeholder{
+
+    color: var(--cor-branca-principal);
+    font-family: var(--font-principal);
+    font-size: 1.5rem;
+
+}
+
+.descricao_bottom{
+    padding: 2%;
+    border-radius: 16px;
+    background-color: rgba(0,0,0,.0);
+    color: var(--cor-branca-principal);
+    border: 1px solid var(--cor-branca-principal);
+    font-family: var(--font-principal);
+    font-size: 1rem;
+    margin: 0% 0% 5% 2%;
+    
+
+}
+
+.descricao_bottom:hover{
+    background-color: var(--cor-branca-principal);
+    color: black;
+}
+
+.minha_redes{
+    margin: 2% 15%;
+}
+
 
 
 
