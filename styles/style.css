@@ -178,6 +178,7 @@ input::placeholder{
     margin: 0% 10%;
     border-left: 1px solid whitesmoke;
     border-right: 1px solid whitesmoke;
+    height: 100vh;
     
 
 }
@@ -187,7 +188,7 @@ input::placeholder{
     margin: 0% 10%;
     border-left: 1px solid whitesmoke;
     border-right: 1px solid whitesmoke;
-    height: 100%;
+    height: 100vh;
 
 }
 
@@ -202,8 +203,8 @@ input::placeholder{
 
 .pefil_chat_foto{
 
-    width: 25%;
-    border-radius: 50%;
+    width: 30%;
+    border-radius: 50px;
     padding: 2%;
 }
 .pefil_chat_info{
@@ -214,6 +215,7 @@ input::placeholder{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .perfil_chamado_tabela{
