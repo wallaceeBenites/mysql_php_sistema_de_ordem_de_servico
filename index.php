@@ -17,7 +17,7 @@
             <input class="pagina_loguin_input" type="password" placeholder="Senha">
             <input class="pagina_loguin_bottom" type="button" value="ENTRAR">
             
-            <a class="cadastro" href="html/cadastro.html">Criar Conta</a>
+            <a class="cadastro" href="html/cadastro.php">Criar Conta</a>
         </section>
     </main>
     

@@ -13,8 +13,8 @@
     <header class="cabecalho">
         <nav class="cabecalho_menu ">
 
-            <a class="cabecalho__menu__link" href="perfil.html"> Home </a>
-            <a class="cabecalho__menu__link" href="criar_os.html"> Abrir Chamado </a>
+            <a class="cabecalho__menu__link" href="perfil.php"> Home </a>
+            <a class="cabecalho__menu__link" href="criar_os.php"> Abrir Chamado </a>
             <a class="cabecalho__menu__link" href=""> Sair </a>
 
         </nav>
