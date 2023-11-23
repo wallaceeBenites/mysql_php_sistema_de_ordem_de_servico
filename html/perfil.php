@@ -1,10 +1,24 @@
+<?php 
+     session_start();
+
+    if(!isset($_SESSION['email'])){
+        
+        header('Location: ../index.php'); // evita usuario acessar usando a URL 
+    }
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caixa de Sugestões</title>
+    <title>Ordem de serviço</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
@@ -15,7 +29,7 @@
 
             <a class="cabecalho__menu__link" href="perfil.php"> Perfil </a>
             <a class="cabecalho__menu__link" href="criar_os.php"> Abrir Chamado </a>
-            <a class="cabecalho__menu__link" href=""> Sair </a>
+            <a class="cabecalho__menu__link" href="../php/logout.php"> Sair </a>
 
         </nav>
     </header>
@@ -34,7 +48,13 @@
 
                     <h3 class="cargo">CARGO: ADM </h2>
                         <br>
-                        <h4 class="info">Email: wallacepuck@gmail.com</h4>
+                        <h4 class="info">
+
+                            <?php 
+                                echo "Email: {$_SESSION['email']}  ";  // mostra o email da variavel email 
+                            ?>
+                    
+                        </h4>
                         <h4 class="info">Celular: (61)98206-9825</h4>
                         <h4 class="info">Data de Criação: 11/11/2000</h4>
                         <h4 class="info">ID : 01</h4>
