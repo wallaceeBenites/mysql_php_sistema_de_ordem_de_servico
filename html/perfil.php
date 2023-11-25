@@ -1,12 +1,16 @@
-<?php 
-     session_start();
+<?php
+session_start();
 
-    if(!isset($_SESSION['email'])){
-        
-        header('Location: ../index.php'); // evita usuario acessar usando a URL 
-    }
+if (!isset($_SESSION['email'])) {
 
+    header('Location: ../index.php'); // evita usuario acessar usando a URL 
+}
 
+require_once("../php/conexao.php");
+
+//consulta para obter a lista de chamados
+$consulta_tabela_chamado = "SELECT * FROM chamado";
+$resultado_consulta_tabela_chamado = mysqli_query($conexao, $consulta_tabela_chamado); 
 
 
 
@@ -27,8 +31,9 @@
     <header class="cabecalho">
         <nav class="cabecalho_menu ">
 
-            <a class="cabecalho__menu__link" href="perfil.php"> Perfil </a>
+            <a class="cabecalho__menu__link" href="perfil.php"> Home </a>
             <a class="cabecalho__menu__link" href="criar_os.php"> Abrir Chamado </a>
+            <a class="cabecalho__menu__link" href="categoria.php"> Configurações </a>
             <a class="cabecalho__menu__link" href="../php/logout.php"> Sair </a>
 
         </nav>
@@ -50,10 +55,10 @@
                         <br>
                         <h4 class="info">
 
-                            <?php 
-                                echo "Email: {$_SESSION['email']}  ";  // mostra o email da variavel email 
+                            <?php
+                            echo "Email: {$_SESSION['email']}  ";  // mostra o email da variavel email 
                             ?>
-                    
+
                         </h4>
                         <h4 class="info">Celular: (61)98206-9825</h4>
                         <h4 class="info">Data de Criação: 11/11/2000</h4>
@@ -89,169 +94,31 @@
                         <td>
                             <h4> Descrição:</h4>
                     <tr>
-                        <td>
-                            <h4>02</h4>
-                        </td>
-                        <td>
-                            <h4>01</h4>
-                        </td>
-                        <td>
-                            <h4>11/12/2032</h4>
-                        </td>
-                        <td>
-                            <h4>17:15</h4>
-                        </td>
-                        <td>
-                            <h4>Hardware</h4>
-                        </td>
-                        <td>
-                            <h4>Media</h4>
-                        </td>
-                        <td>
-                            <h4>Concluido</h4>
-                        </td>
-                        <td>
-                            <h4>Clique Para Ver</h4>
-                        </td>
-                    </tr>
+
+                    <?php
+                        while ($linha_chamado = mysqli_fetch_assoc($resultado_consulta_tabela_chamado)) {
+                        ?>
 
                     <tr>
-                        <td>
-                            <h4>02</h4>
-                        </td>
-                        <td>
-                            <h4>01</h4>
-                        </td>
-                        <td>
-                            <h4>11/12/2032</h4>
-                        </td>
-                        <td>
-                            <h4>17:15</h4>
-                        </td>
-                        <td>
-                            <h4>Hardware</h4>
-                        </td>
-                        <td>
-                            <h4>Media</h4>
-                        </td>
-                        <td>
-                            <h4>Concluido</h4>
-                        </td>
-                        <td>
-                            <h4>Clique Para Ver</h4>
-                        </td>
+                        <td><?php echo htmlspecialchars($linha_chamado['ID_CHAMADO'], ENT_QUOTES, 'UTF-8');  ?></td>
+                        <td><?php echo htmlspecialchars($linha_chamado['ID_USUARIO'], ENT_QUOTES, 'UTF-8');  ?></td>
+                        <td><?php echo htmlspecialchars($linha_chamado['DATA_DE_ABERTURA'], ENT_QUOTES, 'UTF-8');  ?></td>
+                        <td><?php echo htmlspecialchars($linha_chamado['HORA'], ENT_QUOTES, 'UTF-8');  ?></td>
+                        <td><?php echo htmlspecialchars($linha_chamado['ID_TIPO_SERVICO'], ENT_QUOTES, 'UTF-8');  ?></td>
+                        <td><?php echo htmlspecialchars($linha_chamado['ID_PRIORIDADE'], ENT_QUOTES, 'UTF-8');  ?></td>
+                        <td><?php echo htmlspecialchars($linha_chamado['ID_STATUS'], ENT_QUOTES, 'UTF-8');  ?></td>
+                        <td><?php echo htmlspecialchars($linha_chamado['DESCRICAO_DO_CHAMADO'], ENT_QUOTES, 'UTF-8');  ?></td>
                     </tr>
 
-                    <tr>
-                        <td>
-                            <h4>02</h4>
-                        </td>
-                        <td>
-                            <h4>01</h4>
-                        </td>
-                        <td>
-                            <h4>11/12/2032</h4>
-                        </td>
-                        <td>
-                            <h4>17:15</h4>
-                        </td>
-                        <td>
-                            <h4>Hardware</h4>
-                        </td>
-                        <td>
-                            <h4>Media</h4>
-                        </td>
-                        <td>
-                            <h4>Concluido</h4>
-                        </td>
-                        <td>
-                            <h4>Clique Para Ver</h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <h4>02</h4>
-                        </td>
-                        <td>
-                            <h4>01</h4>
-                        </td>
-                        <td>
-                            <h4>11/12/2032</h4>
-                        </td>
-                        <td>
-                            <h4>17:15</h4>
-                        </td>
-                        <td>
-                            <h4>Hardware</h4>
-                        </td>
-                        <td>
-                            <h4>Media</h4>
-                        </td>
-                        <td>
-                            <h4>Concluido</h4>
-                        </td>
-                        <td>
-                            <h4>Clique Para Ver</h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <h4>02</h4>
-                        </td>
-                        <td>
-                            <h4>01</h4>
-                        </td>
-                        <td>
-                            <h4>11/12/2032</h4>
-                        </td>
-                        <td>
-                            <h4>17:15</h4>
-                        </td>
-                        <td>
-                            <h4>Hardware</h4>
-                        </td>
-                        <td>
-                            <h4>Media</h4>
-                        </td>
-                        <td>
-                            <h4>Concluido</h4>
-                        </td>
-                        <td>
-                            <h4>Clique Para Ver</h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <h4>02</h4>
-                        </td>
-                        <td>
-                            <h4>01</h4>
-                        </td>
-                        <td>
-                            <h4>11/12/2032</h4>
-                        </td>
-                        <td>
-                            <h4>17:15</h4>
-                        </td>
-                        <td>
-                            <h4>Hardware</h4>
-                        </td>
-                        <td>
-                            <h4>Media</h4>
-                        </td>
-                        <td>
-                            <h4>Concluido</h4>
-                        </td>
-                        <td>
-                            <h4>Clique Para Ver</h4>
-                        </td>
-                    </tr>
+                <?php } ?>
+ 
 
 
                 </table>
+
+                <img class="logo_categoria" src="../assets/logo (2).png">
+
+
 
             </section>
         </div>

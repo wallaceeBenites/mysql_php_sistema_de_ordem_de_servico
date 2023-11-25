@@ -26,8 +26,9 @@
     <header class="cabecalho">
         <nav class="cabecalho_menu ">
 
-            <a class="cabecalho__menu__link" href="perfil.php"> Home </a>
+        <a class="cabecalho__menu__link" href="perfil.php"> Home </a>
             <a class="cabecalho__menu__link" href="criar_os.php"> Abrir Chamado </a>
+            <a class="cabecalho__menu__link" href="categoria.php"> Configurações </a>
             <a class="cabecalho__menu__link" href="../php/logout.php"> Sair </a>
 
         </nav>
@@ -38,7 +39,7 @@
     <main class="perfil">
 
         <div class="conteiner">
-            <form id="" action="">
+            <form id="" method="post" action="../php/processa_formulario_criar_os.php">
                 <Section class="criar_chamado">
                     <img class="logo_chamado" src="../assets/logo (2).png">
                     <h1>Preencha as informações para criar o CHAMADO. </h1>
@@ -65,9 +66,9 @@
 
                     <div class="descricao">
 
-                        <textarea class="descricao_textarea" type="text" name="" id="" rows="10" cols="50" placeholder="Faça uma descrição do problema.."></textarea>
-                        <input class="descricao_bottom" type="button" value="Criar Chamado">
-
+                        <textarea class="descricao_textarea" type="text" name="descrição_input" id="" rows="10" cols="50" placeholder="Faça uma descrição do problema.."></textarea>
+                       
+                        <button class="descricao_bottom" type="submit" name="bt_criar_chamado">Criar Chamado</button>
 
 
 

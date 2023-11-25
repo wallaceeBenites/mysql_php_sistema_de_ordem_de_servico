@@ -3,10 +3,10 @@ require_once("conexao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $nome = mysqli_real_escape_string($conexao, $_POST["categoria"]);
+    $nome = mysqli_real_escape_string($conexao, $_POST["status"]);
 }
 
-$query  = "INSERT INTO categoria (NOME_AREA_SERVICO) VALUES ('$nome')";
+$query  = "INSERT INTO status (NOME_STATUS) VALUES ('$nome')";
 
 $resultado = mysqli_query($conexao, $query);
 

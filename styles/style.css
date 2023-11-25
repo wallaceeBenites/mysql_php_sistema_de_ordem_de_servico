@@ -158,19 +158,22 @@ input::placeholder{
 .cabecalho_menu{
     display: flex;
     gap: 10%;
-        justify-content: space-between;
+        justify-content: center;
 
 }
 
 .cabecalho__menu__link{
     color: whitesmoke;
-    padding: 2%;
+    padding: 2% 5% ;
     text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,.0);
     font-family: var(--font-principal);
 }
 
 .cabecalho__menu__link:hover{
     color: chartreuse;
+    border-bottom: 1px solid chartreuse;
+    transition: 1s;
 }
 
 .conteiner3{
@@ -182,6 +185,7 @@ input::placeholder{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 25px;
     
 
 }
@@ -225,6 +229,14 @@ input::placeholder{
 
 
     
+}
+
+th{
+    padding: 1% 2%;
+    
+    border-bottom: 1px solid whitesmoke; 
+    border-left: 20px solid rgba(0,0,0,.0); 
+
 }
 
 td{
@@ -368,7 +380,7 @@ td{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    height: 100vh;
 
 }
 
@@ -425,9 +437,10 @@ td{
 .categoria_buttom:hover{
 
 
-    background-color: chartreuse;
+    background-color: var(--cor-branca-principal);
     color: black;
     transition: 0.1s;
+    
 }
 
 .prioridade_form{
@@ -438,4 +451,57 @@ td{
     margin: 0%;
     gap: 20px;
 }
+
+.link_visualizar{
+    color: whitesmoke;
+    padding: 2%;
+    text-decoration: none;
+    font-family: var(--font-principal);
+    font-size: 1.5rem;
+    background-color: rgba(0,0,0,.0);
+    border: none;
+}
+
+.link_visualizar:hover{
+    color: chartreuse;
+    border-bottom: 1px solid chartreuse;
+    transition: 1s;
+}
+
+/* PAGINA MOSTRA TABELA CATEGORIA  */
+
+.tabela_categoria{
+    
+    border: 1px solid whitesmoke;
+    padding: 0%;
+    border-radius: 12px;
+    width: 90%;
+    font-family: var(--font-principal);
+    font-weight: 400;
+    
+}
+
+.tabela_categoria_linha{
+    color: chartreuse;
+    
+}
+
+.nenhum_resultado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    font-family: var(--font-principal);
+    font-size: 1rem;
+
+}
+
+.lupa_imagem{
+    width: 180px;
+}
+
+
+
+
+
 

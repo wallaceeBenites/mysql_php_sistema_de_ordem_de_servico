@@ -13,7 +13,8 @@
     $resultado = mysqli_query($conexao, $query);
 
     if($resultado){
-        echo "Inserção bem-sucedida!";
+        header('Location: ../html/categoria.php');
+        exit();
     } else {
         echo "Erro na inserção: ". mysqli_error($conexao);
     }

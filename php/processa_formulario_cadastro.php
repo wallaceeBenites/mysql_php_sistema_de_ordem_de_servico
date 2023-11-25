@@ -15,7 +15,8 @@
     $resultado = mysqli_query($conexao, $query);
 
     if($resultado){
-        echo "Inserção bem-sucedida!";
+        header('Location: ../index.php');
+    exit();
     } else {
         echo "Erro na inserção: ". mysqli_error($conexao);
     }
