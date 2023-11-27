@@ -4,15 +4,24 @@
 
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    $select_categoria = mysqli_real_escape_string($conexao, $_POST['select_categoria']);
+
+    $select_prioridade = mysqli_real_escape_string($conexao, $_POST['select_prioridade']);
+
     $descricao = mysqli_real_escape_string($conexao, $_POST["descrição_input"]);
+   
     
 }
 
-$query  = "INSERT INTO chamado (DESCRICAO_DO_CHAMADO) VALUES ('$descricao')";
+$query1  = "INSERT INTO chamado (ID_TIPO_SERVICO, ID_PRIORIDADE, DESCRICAO_DO_CHAMADO) VALUES ('$select_categoria','$select_prioridade','$descricao')";
+// $query2  = "INSERT INTO chamado (ID_PRIORIDADE) VALUES ('$select_prioridade')";
+// $query3  = "INSERT INTO chamado (DESCRICAO_DO_CHAMADO) VALUES ('$descricao')";
 
-$resultado = mysqli_query($conexao, $query);
+$resultado1 = mysqli_query($conexao, $query1);
+// $resultado2 = mysqli_query($conexao, $query2);
+// $resultado3 = mysqli_query($conexao, $query3);
 
-if ($resultado) {
+if ($resultado1) {
     
     header('Location: ../html/perfil.php');
     exit();

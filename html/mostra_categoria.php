@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -11,31 +12,34 @@ if (!isset($_SESSION['email'])) {
 require_once("../php/conexao.php");
 
 //consulta para obter a lista de categoria 
+
 $consulta1 = "SELECT * FROM categoria";
 $resultadoConsulta1 = mysqli_query($conexao, $consulta1);
 
-// $num_rows = mysqli_num_rows($resultadoConsulta1);
-//  echo $num_rows."Rows\n"; 
+$num_rows1 = mysqli_num_rows($resultadoConsulta1);
+
 
 //consulta para obtr a lista prioridade 
 
 $consulta2 = "SELECT * FROM prioridade";
 $resultadoConsulta2 = mysqli_query($conexao, $consulta2);
+$num_rows2 = mysqli_num_rows($resultadoConsulta2);
 
 //consulta para obtr a lista status 
 
 $consulta3 = "SELECT * FROM status";
 $resultadoConsulta3 = mysqli_query($conexao, $consulta3);
+$num_rows3 = mysqli_num_rows($resultadoConsulta3);
 
 //consulta para obtr a lista status 
 
 $consulta4 = "SELECT * FROM cargo_autorizacao";
 $resultadoConsulta4 = mysqli_query($conexao, $consulta4);
-
-
-
+$num_rows4 = mysqli_num_rows($resultadoConsulta4);
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -45,7 +49,7 @@ $resultadoConsulta4 = mysqli_query($conexao, $consulta4);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categoria</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <!-- <script src="" type="text/javascript"> </script>  Tentativa de Style display Property -->
+
 </head>
 
 <body>
@@ -73,110 +77,166 @@ $resultadoConsulta4 = mysqli_query($conexao, $consulta4);
 
             <div class="config_form">
 
-             <?php  if(true){ ?>
-                
+                 <?php if ($num_rows1 == 0) { ?>     <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+
                 <div class="nenhum_resultado" id="aparece1">
+
                     <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
-                    <p>Nenhum Resultado Encontrado</p>
-                </div> <?php } else{   ?>
+
+                    <p>Nenhum Resultado Encontrado Para Categoria</p>
+
+                </div>
+
+            <?php } else {   ?> 
+
                 <table id="tabela_categoria" class="tabela_categoria">
+
                     <tr class="tabela_categoria_linha">
-                        <th> Id </th>
-                        <th> Nome categoria </th>
-                    </tr>
-                    <tr>
-                        <?php
-                        while ($linha = mysqli_fetch_assoc($resultadoConsulta1)) {
-                        ?>
 
-                    <tr>
-                        <td><?php echo $linha['ID_TIPO_SERVICO']; ?></td>
-                        <td><?php echo htmlspecialchars($linha['NOME_AREA_SERVICO'], ENT_QUOTES, 'UTF-8');  ?></td>
+                   
+
+                        <th> Nome Categoria </th>
+
                     </tr>
 
-                <?php } ?>
-
-                
+                    <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta1)) { ?>
 
 
+                        <tr>
+                            
 
+                            <td><?php echo htmlspecialchars($linha['NOME_AREA_SERVICO'], ENT_QUOTES, 'UTF-8');  ?></td>
+
+                        </tr>
+
+                    <?php } ?>
 
                 </table>
-                
-                     <?php    } ?>
+
+            <?php } ?>
+
+
+            <?php if ($num_rows2 == 0) { ?>   <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+
+                <div class="nenhum_resultado" id="aparece1">
+
+                    <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
+
+                    <p>Nenhum Resultado Encontrado Para Prioridade </p>
+
+                </div>
+
+            <?php } else { ?>
+
 
                 <table id="tabela_prioridade" class="tabela_categoria">
+
                     <tr class="tabela_categoria_linha">
-                        <th> Id </th>
+
+                       
+
                         <th>Nome Prioridade</th>
+
                     </tr>
 
-                    <?php
-                    while ($linha2 = mysqli_fetch_assoc($resultadoConsulta2)) {
-                    ?>
+                    <?php while ($linha2 = mysqli_fetch_assoc($resultadoConsulta2)) { ?>
 
                         <tr>
-                            <td><?php echo $linha2['ID_PRIORIDADE']; ?></td>
-                            <td><?php echo htmlspecialchars($linha2['NOME_PRIORIDADE'], ENT_QUOTES, 'UTF-8');  ?></td>
+
+                            <td> <?php echo htmlspecialchars($linha2['NOME_PRIORIDADE'], ENT_QUOTES, 'UTF-8'); ?> </td>
+
                         </tr>
 
                     <?php } ?>
 
-
-
-
                 </table>
 
-                <!-- <div class="nenhum_status" id="aparece2">
+
+            <?php } ?>
+
+
+            <?php if ($num_rows3 == 0) {  ?>   <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+
+                <div class="nenhum_resultado" id="aparece1">
+
                     <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
-                    <p>Nenhum Resultado Encontrado</p>
-                </div> -->
+
+                    <p>Nenhum Resultado Encontrado Para Status</p>
+
+                </div>
+
+            <?php  } else { ?>
+
 
                 <table id="tabela_categoria" class="tabela_categoria">
+
                     <tr class="tabela_categoria_linha">
-                        <th> Id </th>
+
+                   
+
                         <th> Nome Status </th>
-                    </tr>
-                    <tr>
-                        <?php
-                        while ($linha = mysqli_fetch_assoc($resultadoConsulta3)) {
-                        ?>
 
-                    <tr>
-                        <td><?php echo $linha['ID_STATUS']; ?></td>
-                        <td><?php echo htmlspecialchars($linha['NOME_STATUS'], ENT_QUOTES, 'UTF-8');  ?></td>
                     </tr>
 
-                <?php } ?>
-
-
-                </table> 
-                
-                <table id="tabela_prioridade" class="tabela_categoria">
-                    <tr class="tabela_categoria_linha">
-                        <th> Id </th>
-                        <th>Nome Cargo</th>
-                    </tr>
-
-                    <?php
-                    while ($linha4 = mysqli_fetch_assoc($resultadoConsulta4)) {
-                    ?>
+                    <?php while ($linha3 = mysqli_fetch_assoc($resultadoConsulta3)) { ?>
 
                         <tr>
-                            <td><?php echo $linha4['ID_CARGO']; ?></td>
-                            <td><?php echo htmlspecialchars($linha4['NOME_CARGO'], ENT_QUOTES, 'UTF-8');  ?></td>
+
+                           
+
+                            <td><?php echo htmlspecialchars($linha3['NOME_STATUS'], ENT_QUOTES, 'UTF-8');  ?></td>
+
                         </tr>
 
                     <?php } ?>
 
 
+                </table>
 
+            <?php } ?>
+
+
+            <?php if ($num_rows4 == 0) { ?>    <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+
+                <div class="nenhum_resultado" id="aparece1">
+
+                    <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
+
+                    <p>Nenhum Resultado Encontrado Para Cargo</p>
+
+                </div>
+
+            <?php } else {   ?>
+
+                <table id="tabela_prioridade" class="tabela_categoria">
+
+                    <tr class="tabela_categoria_linha">
+
+                        
+
+                        <th>Nome Cargo</th>
+
+                    </tr>
+
+                    <?php while ($linha4 = mysqli_fetch_assoc($resultadoConsulta4)) { ?>
+
+                        <tr>
+
+                            
+
+                            <td> <?php echo htmlspecialchars($linha4['NOME_CARGO'], ENT_QUOTES, 'UTF-8');  ?> </td>
+
+                        </tr>
+
+                    <?php } ?>
 
                 </table>
+
+            <?php } ?>
 
             </div>
 
-            
+
 
             <a class="link_visualizar" href="categoria.php">Votlar </a>
 

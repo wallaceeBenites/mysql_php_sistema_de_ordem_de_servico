@@ -45,13 +45,11 @@ $resultado_consulta_tabela_chamado = mysqli_query($conexao, $consulta_tabela_cha
 
         <div class="conteiner">
 
-            <section class="pefil_chat">
-
-                <img class="pefil_chat_foto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsV3qhbgKTZE4ZopMBX2Jt_nhkm0ekaOW9th80tqTnylU9v39zSoy5RxGCOcFdDOS7UCM&usqp=CAU">
-                <div class="pefil_chat_info">
+                <div class="pefil_chat_info" >
+                    
                     <h1 class="nome"> Wallace Ribeiro Benites</h1>
 
-                    <h3 class="cargo">CARGO: ADM </h2>
+                    <h3 class="cargo">CARGO: ADM </h3>
                         <br>
                         <h4 class="info">
 
@@ -63,9 +61,10 @@ $resultado_consulta_tabela_chamado = mysqli_query($conexao, $consulta_tabela_cha
                         <h4 class="info">Celular: (61)98206-9825</h4>
                         <h4 class="info">Data de Criação: 11/11/2000</h4>
                         <h4 class="info">ID : 01</h4>
+
                 </div>
 
-            </section>
+          
             <section class="perfil_chamado">
                 <h1> Chamados Abertos pelo Usario: </h1>
                 <table class="perfil_chamado_tabela">
@@ -92,7 +91,7 @@ $resultado_consulta_tabela_chamado = mysqli_query($conexao, $consulta_tabela_cha
                             <h4> Status:</h4>
                         </td>
                         <td>
-                            <h4> Descrição:</h4>
+                            <h4> Descrição Do Chamado:</h4>
                     <tr>
 
                     <?php

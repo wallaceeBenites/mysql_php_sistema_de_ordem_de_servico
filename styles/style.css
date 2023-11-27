@@ -116,6 +116,12 @@ input::placeholder{
 
 }
 
+.msg_senha_errada{
+    font-family: var(--font-principal);
+    color: red;
+    font-size: 0.9rem;
+}
+
 .pagina_loguin_bottom{
     padding: 5% 40%;
     border-radius: 24.04px;
@@ -196,6 +202,7 @@ input::placeholder{
     display: flex;
     align-items: center;
     padding: 0% 0% 0% 25%;
+    gap: 80px;
 }
 
 
@@ -207,12 +214,14 @@ input::placeholder{
 }
 .pefil_chat_info{
     font-family: var(--font-principal);
+    margin: 2% 0% 0% 0%;
 }
 
 .perfil_chamado{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
     
     
 }
@@ -261,7 +270,7 @@ td{
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 0% 15%;
+    margin: 2% 15%;
     border-radius: 18px;
     background-color: rgba(0,0,0,.5);
 }
@@ -381,6 +390,7 @@ td{
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    gap: 20px;
 
 }
 

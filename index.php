@@ -1,25 +1,10 @@
 <?php
 
-    $email_bd = "wallacepuck@gmail.com"; // Aqui sera um array conectado ao banco 
-    $senha_bd = 123; // Aqui sera um array conectado ao banco
 
-    if (isset($_POST['bt_logar'])){
+$email_bd = "wallacepuck@gmail.com"; // Aqui sera um array conectado ao banco 
+$senha_bd = "123"; // Aqui sera um array conectado ao banco
 
-        session_start();
 
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-
-        $_SESSION['email'] = $email;
-
-        if($email == $email_bd && $senha == $senha_bd){         // valida o loguin 
-
-            header('location: ./html/perfil.php');
-        } else {
-            echo "<p>EMAIL OU SENHA INCORRETOS</p>";
-        }
-
-    }
 ?>
 
 
@@ -36,21 +21,40 @@
 <body>
     <main class="pagina">
         <form class="pagina_loguin" action="index.php" method="POST">
+
             
 
-                <img class="pagina_loguin_logo" src="assets/logo (2).png">
 
-                <label>
-                    <input class="pagina_loguin_input" type="email" name="email" placeholder="EMAIL">
-                </label>
-                <label>
-                    <input class="pagina_loguin_input" type="password" name="senha" placeholder="Senha">
-                </label>
+            <img class="pagina_loguin_logo" src="assets/logo (2).png">
 
-                <button class="pagina_loguin_bottom" type="submit" name="bt_logar">ENTRAR</button>
+            <label>
+                <input class="pagina_loguin_input" type="email" name="email" placeholder="EMAIL">
+            </label>
+            <label>
+                <input class="pagina_loguin_input" type="password" name="senha" placeholder="Senha">
+            </label>
 
-                <a class="cadastro" href="html/cadastro.php">Criar Conta</a>
-            
+                <?php if (isset($_POST['bt_logar'])) {
+
+                session_start();
+
+                $email = $_POST['email'];
+                $senha = $_POST['senha'];
+
+                $_SESSION['email'] = $email;
+
+                if ($email == $email_bd && $senha == $senha_bd) {         // valida o loguin 
+
+                    header('location: ./html/perfil.php');
+                } else { ?>
+                    <p class="msg_senha_errada" >Email ou Senha Incorretos</p>
+              <?php  }
+            } ?>
+
+            <button class="pagina_loguin_bottom" type="submit" name="bt_logar">ENTRAR</button>
+
+            <a class="cadastro" href="html/cadastro.php">Criar Conta</a>
+
         </form>
         <div id="senha_errada"> </div>
     </main>
