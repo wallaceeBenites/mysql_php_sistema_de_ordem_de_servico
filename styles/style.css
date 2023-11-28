@@ -231,7 +231,7 @@ input::placeholder{
     border: 1px solid whitesmoke;
     padding: 0%;
     border-radius: 12px;
-    width: 90%;
+    width: 95%;
     font-family: var(--font-principal);
     font-weight: 400;
 
@@ -241,7 +241,7 @@ input::placeholder{
 }
 
 th{
-    padding: 1% 2%;
+    padding: 0% 0%;
     
     border-bottom: 1px solid whitesmoke; 
     border-left: 20px solid rgba(0,0,0,.0); 
@@ -249,8 +249,9 @@ th{
 }
 
 td{
-    padding: 1% 2%;
+   
     
+    padding: 0% 0%;
     border-bottom: 1px solid whitesmoke; 
     border-left: 20px solid rgba(0,0,0,.0);  
     
@@ -510,8 +511,16 @@ td{
     width: 180px;
 }
 
+.bt_excluir{
+    text-decoration: none;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-
-
+.bt_excluir:hover{
+    color: greenyellow;
+}
 
 

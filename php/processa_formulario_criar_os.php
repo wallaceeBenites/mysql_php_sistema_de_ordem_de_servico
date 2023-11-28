@@ -10,16 +10,21 @@
 
     $descricao = mysqli_real_escape_string($conexao, $_POST["descrição_input"]);
    
+    $status_chamado = 6;
+
+    
+    $data_atual = date('d/m/Y H:i:s', strtotime('-4 hour'));
+
+    $usuarioo = 8;
+
     
 }
 
-$query1  = "INSERT INTO chamado (ID_TIPO_SERVICO, ID_PRIORIDADE, DESCRICAO_DO_CHAMADO) VALUES ('$select_categoria','$select_prioridade','$descricao')";
-// $query2  = "INSERT INTO chamado (ID_PRIORIDADE) VALUES ('$select_prioridade')";
-// $query3  = "INSERT INTO chamado (DESCRICAO_DO_CHAMADO) VALUES ('$descricao')";
+$query1  = "INSERT INTO chamado (ID_TIPO_SERVICO, ID_PRIORIDADE, DESCRICAO_DO_CHAMADO, ID_STATUS, DATA_DE_ABERTURA, ID_USUARIO) VALUES ('$select_categoria','$select_prioridade','$descricao','$status_chamado','$data_atual','$usuarioo')";
+
 
 $resultado1 = mysqli_query($conexao, $query1);
-// $resultado2 = mysqli_query($conexao, $query2);
-// $resultado3 = mysqli_query($conexao, $query3);
+
 
 if ($resultado1) {
     

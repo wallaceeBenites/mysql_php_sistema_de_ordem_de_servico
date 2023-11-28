@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -77,168 +76,173 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
 
             <div class="config_form">
 
-                 <?php if ($num_rows1 == 0) { ?>     <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+                <?php if ($num_rows1 == 0) { ?> <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
 
-                <div class="nenhum_resultado" id="aparece1">
+                    <div class="nenhum_resultado" id="aparece1">
 
-                    <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
+                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
 
-                    <p>Nenhum Resultado Encontrado Para Categoria</p>
+                        <p>Nenhum Resultado Encontrado Para Categoria</p>
 
-                </div>
+                    </div>
 
-            <?php } else {   ?> 
+                <?php } else {   ?>
 
-                <table id="tabela_categoria" class="tabela_categoria">
+                    <table id="tabela_categoria" class="tabela_categoria">
 
-                    <tr class="tabela_categoria_linha">
-
-                   
-
-                        <th> Nome Categoria </th>
-
-                    </tr>
-
-                    <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta1)) { ?>
+                        <tr class="tabela_categoria_linha">
 
 
-                        <tr>
-                            
 
-                            <td><?php echo htmlspecialchars($linha['NOME_AREA_SERVICO'], ENT_QUOTES, 'UTF-8');  ?></td>
+                            <th> Nome Categoria </th>
+                            <th>Ações</th>
 
                         </tr>
 
-                    <?php } ?>
-
-                </table>
-
-            <?php } ?>
+                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta1)) { ?>
 
 
-            <?php if ($num_rows2 == 0) { ?>   <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
-
-                <div class="nenhum_resultado" id="aparece1">
-
-                    <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
-
-                    <p>Nenhum Resultado Encontrado Para Prioridade </p>
-
-                </div>
-
-            <?php } else { ?>
+                            <tr>
 
 
-                <table id="tabela_prioridade" class="tabela_categoria">
+                                <td><?php echo htmlspecialchars($linha['NOME_AREA_SERVICO'], ENT_QUOTES, 'UTF-8');  ?></td>
+                                <td> <a class="bt_excluir" href="../php/escluir_categoria.php?ID_TIPO_SERVICO=<?php echo $linha['ID_TIPO_SERVICO']; ?>">⨂</a> </td>
+                            </tr>
 
-                    <tr class="tabela_categoria_linha">
+                        <?php } ?>
 
-                       
+                    </table>
 
-                        <th>Nome Prioridade</th>
-
-                    </tr>
-
-                    <?php while ($linha2 = mysqli_fetch_assoc($resultadoConsulta2)) { ?>
-
-                        <tr>
-
-                            <td> <?php echo htmlspecialchars($linha2['NOME_PRIORIDADE'], ENT_QUOTES, 'UTF-8'); ?> </td>
-
-                        </tr>
-
-                    <?php } ?>
-
-                </table>
+                <?php } ?>
 
 
-            <?php } ?>
+                <?php if ($num_rows2 == 0) { ?> <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+
+                    <div class="nenhum_resultado" id="aparece1">
+
+                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
+
+                        <p>Nenhum Resultado Encontrado Para Prioridade </p>
+
+                    </div>
+
+                <?php } else { ?>
 
 
-            <?php if ($num_rows3 == 0) {  ?>   <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+                    <table id="tabela_prioridade" class="tabela_categoria">
 
-                <div class="nenhum_resultado" id="aparece1">
-
-                    <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
-
-                    <p>Nenhum Resultado Encontrado Para Status</p>
-
-                </div>
-
-            <?php  } else { ?>
+                        <tr class="tabela_categoria_linha">
 
 
-                <table id="tabela_categoria" class="tabela_categoria">
 
-                    <tr class="tabela_categoria_linha">
-
-                   
-
-                        <th> Nome Status </th>
-
-                    </tr>
-
-                    <?php while ($linha3 = mysqli_fetch_assoc($resultadoConsulta3)) { ?>
-
-                        <tr>
-
-                           
-
-                            <td><?php echo htmlspecialchars($linha3['NOME_STATUS'], ENT_QUOTES, 'UTF-8');  ?></td>
+                            <th>Nome Prioridade</th>
+                            <th>Ações</th>
 
                         </tr>
 
-                    <?php } ?>
+                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta2)) { ?>
+
+                            <tr>
+
+                                <td> <?php echo htmlspecialchars($linha['NOME_PRIORIDADE'], ENT_QUOTES, 'UTF-8'); ?> </td>
+                                <td> <a class="bt_excluir" href="../php/escluir_prioridade.php?ID_PRIORIDADE=<?php echo $linha['ID_PRIORIDADE']; ?>">⨂</a> </td>
+
+                            </tr>
+
+                        <?php } ?>
+
+                    </table>
 
 
-                </table>
-
-            <?php } ?>
+                <?php } ?>
 
 
-            <?php if ($num_rows4 == 0) { ?>    <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+                <?php if ($num_rows3 == 0) {  ?> <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
 
-                <div class="nenhum_resultado" id="aparece1">
+                    <div class="nenhum_resultado" id="aparece1">
 
-                    <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
+                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
 
-                    <p>Nenhum Resultado Encontrado Para Cargo</p>
+                        <p>Nenhum Resultado Encontrado Para Status</p>
 
-                </div>
+                    </div>
 
-            <?php } else {   ?>
+                <?php  } else { ?>
 
-                <table id="tabela_prioridade" class="tabela_categoria">
 
-                    <tr class="tabela_categoria_linha">
+                    <table id="tabela_categoria" class="tabela_categoria">
 
-                        
+                        <tr class="tabela_categoria_linha">
 
-                        <th>Nome Cargo</th>
 
-                    </tr>
 
-                    <?php while ($linha4 = mysqli_fetch_assoc($resultadoConsulta4)) { ?>
-
-                        <tr>
-
-                            
-
-                            <td> <?php echo htmlspecialchars($linha4['NOME_CARGO'], ENT_QUOTES, 'UTF-8');  ?> </td>
+                            <th> Nome Status </th>
+                            <th>Ações</th>
 
                         </tr>
 
-                    <?php } ?>
+                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta3)) { ?>
 
-                </table>
+                            <tr>
 
-            <?php } ?>
+
+
+                                <td><?php echo htmlspecialchars($linha['NOME_STATUS'], ENT_QUOTES, 'UTF-8');  ?></td>
+                                <td> <a class="bt_excluir" href="../php/escluir_status.php?ID_STATUS=<?php echo $linha['ID_STATUS']; ?>">⨂</a> </td>
+                            </tr>
+
+                        <?php } ?>
+
+
+                    </table>
+
+                <?php } ?>
+
+
+                <?php if ($num_rows4 == 0) { ?> <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+
+                    <div class="nenhum_resultado" id="aparece1">
+
+                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
+
+                        <p>Nenhum Resultado Encontrado Para Cargo</p>
+
+                    </div>
+
+                <?php } else {   ?>
+
+                    <table id="tabela_prioridade" class="tabela_categoria">
+
+                        <tr class="tabela_categoria_linha">
+
+
+
+                            <th>Nome Cargo</th>
+                            <th>Ações</th>
+
+                        </tr>
+
+                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta4)) { ?>
+
+                            <tr>
+
+
+
+                                <td> <?php echo htmlspecialchars($linha['NOME_CARGO'], ENT_QUOTES, 'UTF-8');  ?> </td>
+                                <td> <a class="bt_excluir" href="../php/escluir_cargo.php?ID_CARGO=<?php echo $linha['ID_CARGO']; ?>">⨂</a> </td>
+                            </tr>
+
+                        <?php } ?>
+
+                    </table>
+
+                <?php } ?>
 
             </div>
 
 
 
-            <a class="link_visualizar" href="categoria.php">Votlar </a>
+            <a class="link_visualizar" href="categoria.php">Voltar </a>
 
 
         </div>
