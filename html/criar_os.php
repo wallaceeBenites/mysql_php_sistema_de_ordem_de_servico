@@ -9,6 +9,22 @@ if (!isset($_SESSION['email'])) {
 
 require_once("../php/conexao.php");
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$id_chamado = @$_GET['ID_CHAMADO'];
+
+
+if($id_chamado) {
+    $consulta = "SELECT * FROM chamado WHERE ID_CHAMADO = '$id_chamado'"; 
+
+    $resultadoconsulta = mysqli_query($conexao, $consulta);          // consulta para editar 
+
+    $linha_textarea = mysqli_fetch_assoc($resultadoconsulta);
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 //consulta para obter a lista de categoria 
 
 $consulta1 = "SELECT * FROM categoria";
@@ -18,6 +34,11 @@ $resultado_da_consulta1 = mysqli_query($conexao, $consulta1);
 
 $consulta2 = "SELECT * FROM prioridade";
 $resultado_da_consulta2 = mysqli_query($conexao, $consulta2);
+
+//consulta para obtr a lista status 
+
+$consulta3 = "SELECT * FROM status";
+$resultado_da_consulta3 = mysqli_query($conexao, $consulta3);
 
 
 
@@ -52,16 +73,19 @@ $resultado_da_consulta2 = mysqli_query($conexao, $consulta2);
 
         <div class="conteiner">
 
-            <form id="" method="post" action="../php/processa_formulario_criar_os.php">
+            <form id="" method="post"  <?php if(!$id_chamado){ ?> action="../php/processa_formulario_criar_os.php" <?php }else{ ?> action="../php/up_chamado.php"> <?php } ?> 
+
+            
 
                 <Section class="criar_chamado">
+                    
+                    <img class="logo_chamado" <?php if(!$id_chamado){ ?> src="../assets/logo (2).png" <?php } else { ?> src="../assets/logo_editar.png" <?php } ?> >
 
-                    <img class="logo_chamado" src="../assets/logo (2).png">
-
-                    <h1>Preencha as informações para criar o CHAMADO. </h1>
+                    <h1><?php if(!$id_chamado){echo "Preencha as informações para criar o CHAMADO."; }else{ echo "Alterar Status e Descrição do CHAMADO."; }  ?>  </h1>
 
                     <div class="tipo_servico_prioridade">
 
+                           <?php if(!$id_chamado){ ?>  <!--   diferenciar tela de criar chamado e de editar chamado  -->
                         <div class="tipo_servico">
 
                             <h3 class="tipo_servico_prioridade_subtitulo">Categoria :</h3>
@@ -104,13 +128,41 @@ $resultado_da_consulta2 = mysqli_query($conexao, $consulta2);
 
                         </div>
 
+                        <?php } else{ ?>
+                        <div class="prioridade">
+
+                            <h3 class="tipo_servico_prioridade_subtitulo"> Status: </h3>
+
+                            <select class="chamado_select" name="select_status">
+
+                                <?php while ($linha = mysqli_fetch_assoc($resultado_da_consulta3)) { ?>
+
+                                    <option value="<?php echo $linha['ID_STATUS']; ?>">
+
+                                    <?php echo htmlspecialchars($linha['NOME_STATUS'], ENT_QUOTES, 'UTF-8');  ?>
+
+                                    </option>
+
+
+                                <?php } ?>
+
+
+                            </select>
+
+                        </div>
+
+                        <?php } ?>
+
                     </div>
 
                     <div class="descricao">
 
-                        <textarea class="descricao_textarea" type="text" name="descrição_input" id="" rows="10" cols="50" placeholder="Faça uma descrição do problema.."></textarea>
+                        <textarea maxlength="150" class="descricao_textarea" type="text" name="descrição_input" id="" rows="10" cols="50" placeholder=" Faça uma descrição do problema, Maximo 150 letras..."><?php echo @$linha_textarea['DESCRICAO_DO_CHAMADO']; ?></textarea>
+                        
 
-                        <button class="descricao_bottom" type="submit" name="bt_criar_chamado">Criar Chamado</button>
+                        <?php if(!$id_chamado) { ?> <button class="descricao_bottom" type="submit" name="bt_editar_chamado">Criar Chamado</button>  <?php } 
+                        else { ?> <a class="link_visualizar" href="perfil.php"> VOLTAR </a> <button class="descricao_bottom" type="submit" name="bt_criar_chamado">Editar Chamado</button>  <?php }  ?>
+                       
 
 
 
@@ -127,6 +179,9 @@ $resultado_da_consulta2 = mysqli_query($conexao, $consulta2);
                         chamado. Qualquer dúvida entrar em contato pelo WhatsApp (61) 98206-9825.</h4>
 
                 </div>
+                    
+                <!-- input pra enviar o id pro up_chamado.php -->
+                <input type="hidden" name="input_id" value="<?php echo @$linha_textarea['ID_CHAMADO']; ?>"> 
 
             </form>
 

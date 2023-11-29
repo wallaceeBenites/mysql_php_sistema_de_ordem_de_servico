@@ -80,7 +80,7 @@ $resultado_consulta_tabela_chamado = mysqli_query($conexao, $consulta_tabela_cha
                         <td>
                             <h4> Data e Hora de Abertura:</h4>
                         </td>
-                        
+
                         <td>
                             <h4> Tipo de Serviço:</h4>
                         </td>
@@ -100,33 +100,33 @@ $resultado_consulta_tabela_chamado = mysqli_query($conexao, $consulta_tabela_cha
 
                         <?php
                         while ($linha_chamado = mysqli_fetch_assoc($resultado_consulta_tabela_chamado)) {
- 
- 
- 
+
+
+
                             // consulta o nome pelo id de categoria
                             $id_categoria = $linha_chamado['ID_TIPO_SERVICO'];
-                            $consultanome_categoria = "SELECT NOME_AREA_SERVICO FROM categoria WHERE ID_TIPO_SERVICO = $id_categoria";   
-                            $resultado_consulta_nome_categoria = mysqli_query($conexao, $consultanome_categoria);          
+                            $consultanome_categoria = "SELECT NOME_AREA_SERVICO FROM categoria WHERE ID_TIPO_SERVICO = $id_categoria";
+                            $resultado_consulta_nome_categoria = mysqli_query($conexao, $consultanome_categoria);
                             $nome_categoria = mysqli_fetch_array($resultado_consulta_nome_categoria);
 
 
                             // consulta o nome pelo id de prioridade
                             $id_prioridade = $linha_chamado['ID_PRIORIDADE'];
-                            $consultanome_prioridade = "SELECT NOME_PRIORIDADE FROM prioridade WHERE ID_PRIORIDADE = $id_prioridade";   
-                            $resultado_consulta_nome_prioridade = mysqli_query($conexao, $consultanome_prioridade);          
+                            $consultanome_prioridade = "SELECT NOME_PRIORIDADE FROM prioridade WHERE ID_PRIORIDADE = $id_prioridade";
+                            $resultado_consulta_nome_prioridade = mysqli_query($conexao, $consultanome_prioridade);
                             $nome_prioridade = mysqli_fetch_array($resultado_consulta_nome_prioridade);
 
-                             // consulta o nome pelo id de status
-                             $id_status = $linha_chamado['ID_STATUS'];
-                             $consultanome_status = "SELECT NOME_STATUS FROM status WHERE ID_STATUS = $id_status";   
-                             $resultado_consulta_nome_status = mysqli_query($conexao, $consultanome_status);          
-                             $nome_status = mysqli_fetch_array($resultado_consulta_nome_status);
+                            // consulta o nome pelo id de status
+                            $id_status = $linha_chamado['ID_STATUS'];
+                            $consultanome_status = "SELECT NOME_STATUS FROM status WHERE ID_STATUS = $id_status";
+                            $resultado_consulta_nome_status = mysqli_query($conexao, $consultanome_status);
+                            $nome_status = mysqli_fetch_array($resultado_consulta_nome_status);
 
-                             // consulta o nome pelo id de usuario
-                             $id_usuario = $linha_chamado['ID_USUARIO'];
-                             $consultanome_usuario = "SELECT NOME FROM usuario WHERE ID_USUARIO = $id_usuario";   
-                             $resultado_consulta_nome_usuario = mysqli_query($conexao, $consultanome_usuario);          
-                             $nome_usuario = mysqli_fetch_array($resultado_consulta_nome_usuario);
+                            // consulta o nome pelo id de usuario
+                            $id_usuario = $linha_chamado['ID_USUARIO'];
+                            $consultanome_usuario = "SELECT NOME FROM usuario WHERE ID_USUARIO = $id_usuario";
+                            $resultado_consulta_nome_usuario = mysqli_query($conexao, $consultanome_usuario);
+                            $nome_usuario = mysqli_fetch_array($resultado_consulta_nome_usuario);
 
 
 
@@ -135,7 +135,7 @@ $resultado_consulta_tabela_chamado = mysqli_query($conexao, $consulta_tabela_cha
                     <tr>
                         <td><?php echo htmlspecialchars($linha_chamado['ID_CHAMADO'], ENT_QUOTES, 'UTF-8');  ?></td>
 
-                         <td><?php echo htmlspecialchars($nome_usuario['NOME'], ENT_QUOTES, 'UTF-8');  ?></td>  <!-- mostra nome usando o id -->
+                        <td><?php echo htmlspecialchars($nome_usuario['NOME'], ENT_QUOTES, 'UTF-8');  ?></td> <!-- mostra nome usando o id -->
 
                         <td><?php echo htmlspecialchars($linha_chamado['DATA_DE_ABERTURA'], ENT_QUOTES, 'UTF-8');  ?></td>
 
@@ -147,7 +147,10 @@ $resultado_consulta_tabela_chamado = mysqli_query($conexao, $consulta_tabela_cha
 
                         <td><?php echo htmlspecialchars($linha_chamado['DESCRICAO_DO_CHAMADO'], ENT_QUOTES, 'UTF-8');  ?></td>
 
-                        <td> <a class="bt_excluir" href="../php/escluir_chamado.php?ID_CHAMADO=<?php echo $linha_chamado['ID_CHAMADO']; ?>">⨂</a> </td>
+                        <td class="acoes">
+                            <a class="bt_editar" href="../html/criar_os.php?ID_CHAMADO=<?php echo $linha_chamado['ID_CHAMADO']; ?>">✎</a>
+                            <a class="bt_excluir" href="../php/escluir_chamado.php?ID_CHAMADO=<?php echo $linha_chamado['ID_CHAMADO']; ?>">⨂</a>
+                        </td>
 
                     </tr>
 
