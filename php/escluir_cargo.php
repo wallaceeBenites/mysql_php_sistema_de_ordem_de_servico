@@ -2,8 +2,8 @@
 
 require_once("conexao.php");
 
-if(isset($_GET['ID_CARGO'])){
-
+if(isset($_GET['ID_CARGO'])){   // RECBE ID DO CARGO A SER EXCLUIDO 
+  
     $idUsuario = $_GET['ID_CARGO'];
 
     $consultaDelete = "DELETE FROM cargo_autorizacao WHERE ID_CARGO =  $idUsuario";

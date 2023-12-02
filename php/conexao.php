@@ -9,7 +9,7 @@ $conexao = mysqli_connect($host, $usuario, $senha, $banco);
 
 
 if(!$conexao){
-    die("Falha na conexão" . mysqli_connect_error());
+    die("Falha na conexão" . mysqli_connect_error()); // CASO TENHA FALHA NA CREDENCIAIS 
 }
 
 

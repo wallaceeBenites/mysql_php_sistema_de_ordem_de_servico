@@ -2,39 +2,36 @@
 
 session_start();
 
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['email'])) { // IDENTIFICA SE USUARIO FEZ O LOGUIN, SE NÃO TIVER FEITO ENVIE PARA TELA DE LOGUIN, NÃO PERMITINDO A ENTRADA SEM LOGUIN E SENHA.
 
-    header('Location: ../index.php'); // evita usuario acessar usando a URL 
+    header('Location: ../index.php');
 }
 
 
 require_once("../php/conexao.php");
 
-//consulta para obter a lista de categoria 
-
+// CONSULTA PARA OBTER A LISTA DE CATEGORIA 
 $consulta1 = "SELECT * FROM categoria";
 $resultadoConsulta1 = mysqli_query($conexao, $consulta1);
+$num_rows1 = mysqli_num_rows($resultadoConsulta1); // IDENTIFICA O NUMERO DE LINHAS DA TABELA 
 
-$num_rows1 = mysqli_num_rows($resultadoConsulta1);
 
-
-//consulta para obtr a lista prioridade 
-
+// CONSULTA PARA OBTER A LISTA DE PRIORIDADE  
 $consulta2 = "SELECT * FROM prioridade";
 $resultadoConsulta2 = mysqli_query($conexao, $consulta2);
-$num_rows2 = mysqli_num_rows($resultadoConsulta2);
+$num_rows2 = mysqli_num_rows($resultadoConsulta2); // IDENTIFICA O NUMERO DE LINHAS DA TABELA 
 
-//consulta para obtr a lista status 
 
+// CONSULTA PARA OBTER A LISTA DE STATUS  
 $consulta3 = "SELECT * FROM status";
 $resultadoConsulta3 = mysqli_query($conexao, $consulta3);
-$num_rows3 = mysqli_num_rows($resultadoConsulta3);
+$num_rows3 = mysqli_num_rows($resultadoConsulta3); // IDENTIFICA O NUMERO DE LINHAS DA TABELA 
 
-//consulta para obtr a lista status 
 
+// CONSULTA PARA OBTER A LISTA DE CARGO 
 $consulta4 = "SELECT * FROM cargo_autorizacao";
 $resultadoConsulta4 = mysqli_query($conexao, $consulta4);
-$num_rows4 = mysqli_num_rows($resultadoConsulta4);
+$num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LINHAS DA TABELA 
 
 ?>
 
@@ -53,13 +50,18 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
 
 <body>
 
-    <header class="cabecalho">
+    <header class="cabecalho"> <!-- NAVEGADOR CABEÇALHO -->
         <nav class="cabecalho_menu ">
 
-            <a class="cabecalho__menu__link" href="perfil.php"> Home </a>
-            <a class="cabecalho__menu__link" href="criar_os.php"> Abrir Chamado </a>
-            <a class="cabecalho__menu__link" href="categoria.php"> Configurações </a>
-            <a class="cabecalho__menu__link" href="../php/logout.php"> Sair </a>
+            <a class="cabecalho__menu__link" href="perfil.php"> Home </a> <!-- LINK PAGINA Home(perfil.php) -->
+
+            <a class="cabecalho__menu__link" href="criar_os.php"> Abrir Chamado </a> <!-- LINK PAGINA Abrir Chamado(criar_os.php) -->
+
+            <a class="cabecalho__menu__link" href="categoria.php"> Configurações </a> <!-- LINK PAGINA Configurações(categoria.php) -->
+
+            <a class="cabecalho__menu__link" href="../php/logout.php"> Sair </a> <!-- LINK PARA Sair(logout.php) -->
+
+
         </nav>
     </header>
 
@@ -76,17 +78,19 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
 
             <div class="config_form">
 
-                <?php if ($num_rows1 == 0) { ?> <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+
+                <?php if ($num_rows1 == 0) { ?> <!-- CONDICIONAL QUE FAZ APARECE UMA IMAGEM DE UMA LUPA CASO NÃO TENHA CONTEUDO PARA APARECER NA TABELA  -->
 
                     <div class="nenhum_resultado" id="aparece1">
 
-                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
+                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo"> <!-- DIV PARA MOSTRA MENSAGEM CASO NENHUM RESULTAOD ENCONTRADO   -->
 
                         <p>Nenhum Resultado Encontrado Para Categoria</p>
 
                     </div>
 
-                <?php } else {   ?>
+                <?php } else {   ?> <!-- else DA CONDICIONAL QUE FAZ APARECE UMA IMAGEM DE UMA LUPA CASO NÃO TENHA CONTEUDO PARA APARECER NA TABELA(MOSTRA TABELA)  -->
+
 
                     <table id="tabela_categoria" class="tabela_categoria">
 
@@ -99,14 +103,14 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
 
                         </tr>
 
-                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta1)) { ?>
+                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta1)) { ?> <!-- LAÇO DE REPETIÇÃO PARA MOSTRA CONTEUDO TABELA CATEGORIA  -->
 
 
                             <tr>
 
 
                                 <td><?php echo htmlspecialchars($linha['NOME_AREA_SERVICO'], ENT_QUOTES, 'UTF-8');  ?></td>
-                                <td> <a class="bt_excluir" href="../php/escluir_categoria.php?ID_TIPO_SERVICO=<?php echo $linha['ID_TIPO_SERVICO']; ?>">⨂</a> </td>
+                                <td> <a class="bt_excluir" href="../php/escluir_categoria.php?ID_TIPO_SERVICO=<?php echo $linha['ID_TIPO_SERVICO']; ?>">⨂</a> </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
                             </tr>
 
                         <?php } ?>
@@ -116,17 +120,18 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
                 <?php } ?>
 
 
-                <?php if ($num_rows2 == 0) { ?> <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+
+                <?php if ($num_rows2 == 0) { ?> <!-- CONDICIONAL QUE FAZ APARECE UMA IMAGEM DE UMA LUPA CASO NÃO TENHA CONTEUDO PARA APARECER NA TABELA  -->
 
                     <div class="nenhum_resultado" id="aparece1">
 
-                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
+                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo"> <!-- DIV PARA MOSTRA MENSAGEM CASO NENHUM RESULTAOD ENCONTRADO   -->
 
                         <p>Nenhum Resultado Encontrado Para Prioridade </p>
 
                     </div>
 
-                <?php } else { ?>
+                <?php } else { ?> <!-- else DA CONDICIONAL QUE FAZ APARECE UMA IMAGEM DE UMA LUPA CASO NÃO TENHA CONTEUDO PARA APARECER NA TABELA(MOSTRA TABELA)  -->
 
 
                     <table id="tabela_prioridade" class="tabela_categoria">
@@ -140,12 +145,12 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
 
                         </tr>
 
-                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta2)) { ?>
+                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta2)) { ?> <!-- LAÇO DE REPETIÇÃO PARA MOSTRA CONTEUDO TABELA PRIORIDADE  -->
 
                             <tr>
 
                                 <td> <?php echo htmlspecialchars($linha['NOME_PRIORIDADE'], ENT_QUOTES, 'UTF-8'); ?> </td>
-                                <td> <a class="bt_excluir" href="../php/escluir_prioridade.php?ID_PRIORIDADE=<?php echo $linha['ID_PRIORIDADE']; ?>">⨂</a> </td>
+                                <td> <a class="bt_excluir" href="../php/escluir_prioridade.php?ID_PRIORIDADE=<?php echo $linha['ID_PRIORIDADE']; ?>">⨂</a> </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
 
                             </tr>
 
@@ -157,17 +162,18 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
                 <?php } ?>
 
 
-                <?php if ($num_rows3 == 0) {  ?> <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+
+                <?php if ($num_rows3 == 0) {  ?> <!-- CONDICIONAL QUE FAZ APARECE UMA IMAGEM DE UMA LUPA CASO NÃO TENHA CONTEUDO PARA APARECER NA TABELA  -->
 
                     <div class="nenhum_resultado" id="aparece1">
 
-                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
+                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo"> <!-- DIV PARA MOSTRA MENSAGEM CASO NENHUM RESULTAOD ENCONTRADO   -->
 
                         <p>Nenhum Resultado Encontrado Para Status</p>
 
                     </div>
 
-                <?php  } else { ?>
+                <?php  } else { ?> <!-- else DA CONDICIONAL QUE FAZ APARECE UMA IMAGEM DE UMA LUPA CASO NÃO TENHA CONTEUDO PARA APARECER NA TABELA(MOSTRA TABELA)  -->
 
 
                     <table id="tabela_categoria" class="tabela_categoria">
@@ -181,14 +187,14 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
 
                         </tr>
 
-                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta3)) { ?>
+                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta3)) { ?> <!-- LAÇO DE REPETIÇÃO PARA MOSTRA CONTEUDO TABELA STATUS  -->
 
                             <tr>
 
 
 
                                 <td><?php echo htmlspecialchars($linha['NOME_STATUS'], ENT_QUOTES, 'UTF-8');  ?></td>
-                                <td> <a class="bt_excluir" href="../php/escluir_status.php?ID_STATUS=<?php echo $linha['ID_STATUS']; ?>">⨂</a> </td>
+                                <td> <a class="bt_excluir" href="../php/escluir_status.php?ID_STATUS=<?php echo $linha['ID_STATUS']; ?>">⨂</a> </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
                             </tr>
 
                         <?php } ?>
@@ -199,17 +205,18 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
                 <?php } ?>
 
 
-                <?php if ($num_rows4 == 0) { ?> <!--  Faz aparecer imagem de uma lupa quando não tem nenhuma linha no banco  -->
+                
+                <?php if ($num_rows4 == 0) { ?> <!-- CONDICIONAL QUE FAZ APARECE UMA IMAGEM DE UMA LUPA CASO NÃO TENHA CONTEUDO PARA APARECER NA TABELA  -->
 
                     <div class="nenhum_resultado" id="aparece1">
 
-                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo">
+                        <img class="lupa_imagem" src="../assets/lupa.png" alt="logotipo"> <!-- DIV PARA MOSTRA MENSAGEM CASO NENHUM RESULTAOD ENCONTRADO   -->
 
                         <p>Nenhum Resultado Encontrado Para Cargo</p>
 
                     </div>
 
-                <?php } else {   ?>
+                <?php } else {   ?> <!-- else DA CONDICIONAL QUE FAZ APARECE UMA IMAGEM DE UMA LUPA CASO NÃO TENHA CONTEUDO PARA APARECER NA TABELA(MOSTRA TABELA)  -->
 
                     <table id="tabela_prioridade" class="tabela_categoria">
 
@@ -222,14 +229,14 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
 
                         </tr>
 
-                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta4)) { ?>
+                        <?php while ($linha = mysqli_fetch_assoc($resultadoConsulta4)) { ?> <!-- LAÇO DE REPETIÇÃO PARA MOSTRA CONTEUDO TABELA CARGO  -->
 
                             <tr>
 
 
 
                                 <td> <?php echo htmlspecialchars($linha['NOME_CARGO'], ENT_QUOTES, 'UTF-8');  ?> </td>
-                                <td> <a class="bt_excluir" href="../php/escluir_cargo.php?ID_CARGO=<?php echo $linha['ID_CARGO']; ?>">⨂</a> </td>
+                                <td> <a class="bt_excluir" href="../php/escluir_cargo.php?ID_CARGO=<?php echo $linha['ID_CARGO']; ?>">⨂</a> </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
                             </tr>
 
                         <?php } ?>
@@ -238,11 +245,12 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4);
 
                 <?php } ?>
 
+
             </div>
 
 
 
-            <a class="link_visualizar" href="categoria.php">Voltar </a>
+            <a class="link_visualizar" href="categoria.php">Voltar </a>  <!-- LINK PARA VOLTAR A TELA DE INSERIR CONTEUDO DAS TABELAS  --> 
 
 
         </div>

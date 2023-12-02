@@ -4,7 +4,7 @@
     session_destroy();
 
 
-    header('Location: ../index.php'); 
+    header('Location: ../index.php');  // ENVIA PARA TELA DE LOGUIN APOS FEITO O LOGOUT 
 
 
 

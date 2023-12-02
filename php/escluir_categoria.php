@@ -2,7 +2,7 @@
 
 require_once("conexao.php");
 
-if(isset($_GET['ID_TIPO_SERVICO'])){
+if(isset($_GET['ID_TIPO_SERVICO'])){ // RECBE ID DA CATEGORIA A SER EXCLUIDA
 
     $idUsuario = $_GET['ID_TIPO_SERVICO'];
 

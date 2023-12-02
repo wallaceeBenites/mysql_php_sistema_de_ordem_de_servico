@@ -2,7 +2,7 @@
 
  require_once("conexao.php");
 
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {  // RECEBE A INFORMAÇÃO DO FORMULARIO DE CRIAR CHAMADO 
 
     $select_categoria = mysqli_real_escape_string($conexao, $_POST['select_categoria']);
 
@@ -28,7 +28,7 @@ $resultado1 = mysqli_query($conexao, $query1);
 
 if ($resultado1) {
     
-    header('Location: ../html/perfil.php');
+    header('Location: ../html/perfil.php'); // ENVIAR PARA TELA HOME CASO TENHA DADO CERTO
     exit();
 } else {
     echo " <h1>'Erro na inserção: </h1> " . mysqli_error($conexao);

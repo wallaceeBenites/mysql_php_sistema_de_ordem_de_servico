@@ -2,7 +2,7 @@
 
 require_once("conexao.php");
 
-if(isset($_GET['ID_PRIORIDADE'])){
+if(isset($_GET['ID_PRIORIDADE'])){ // RECBE ID DA PRIORIDADE A SER EXCLUIDA
 
     $idUsuario = $_GET['ID_PRIORIDADE'];
 

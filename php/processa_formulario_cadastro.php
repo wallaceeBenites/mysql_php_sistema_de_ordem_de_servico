@@ -1,7 +1,7 @@
 <?php 
     require_once("conexao.php");
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if($_SERVER["REQUEST_METHOD"] == "POST"){ // RECEBE AS INFORMAÇÕES DO FORMULARIO DE CADASTRO 
 
         $nome = mysqli_real_escape_string($conexao, $_POST["cadastro_input_name"]);
         $email = mysqli_real_escape_string($conexao, $_POST["cadastro_input_email"]);
@@ -12,12 +12,12 @@
         
     }
 
-    $query  = "INSERT INTO usuario (NOME,EMAIL,SENHA,TELEFONE,DATA_DE_CADASTRO,ID_CARGO) VALUES ('$nome','$email',' $senha_us','$telefone','$data_atual','$cargo')";
+    $query  = "INSERT INTO usuario (NOME,EMAIL,SENHA,TELEFONE,DATA_DE_CADASTRO,ID_CARGO) VALUES ('$nome','$email',' $senha_us','$telefone','$data_atual','$cargo')"; // ENVIA PARA O BANCO DE DADOS 
 
     $resultado = mysqli_query($conexao, $query);
 
     if($resultado){
-        header('Location: ../index.php');
+        header('Location: ../index.php');  // ENVIA PARA TELA DE LOGAR APOS CRIAR O PERFIL 
     exit();
     } else {
         echo "Erro na inserção: ". mysqli_error($conexao);

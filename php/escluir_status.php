@@ -2,7 +2,7 @@
 
 require_once("conexao.php");
 
-if(isset($_GET['ID_STATUS'])){
+if(isset($_GET['ID_STATUS'])){ // RECBE ID DO STATUS A SER EXCLUIDO 
 
     $idUsuario = $_GET['ID_STATUS'];
 

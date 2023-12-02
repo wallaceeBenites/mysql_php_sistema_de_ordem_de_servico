@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <form class="cadastro_form" id="" method="post" action="../php/processa_formulario_cadastro.php">
+    <form class="cadastro_form" id="" method="post" action="../php/processa_formulario_cadastro.php">    <!-- FORMULARIO PARA CRIAR UM NOVO USUARIO  -->
     <main class="pagina">
     
         <section class="pagina_loguin_cadastro"> 
@@ -18,7 +18,7 @@
 
             <input class="pagina_loguin_input" name="cadastro_input_email" type="email" placeholder="Email" maxlength="50" >
 
-            <input class="pagina_loguin_input" name="cadastro_input_senha" type="password" placeholder="Senha" maxlength="20">
+            <input class="pagina_loguin_input" name="cadastro_input_senha" type="password" placeholder="Senha" maxlength="20">       
 
             <input class="pagina_loguin_input" name="cadastro_input_telefone" type="tel" placeholder="Telefone" maxlength="11">
 

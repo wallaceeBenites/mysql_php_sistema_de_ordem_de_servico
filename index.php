@@ -34,20 +34,20 @@ $senha_bd = "123"; // Aqui sera um array conectado ao banco
                 <input class="pagina_loguin_input" type="password" name="senha" placeholder="Senha">
             </label>
 
-                <?php if (isset($_POST['bt_logar'])) {
+                <?php if (isset($_POST['bt_logar'])) { // RECEBE AS INFORMAÇÕES DOS INPUTS DE LOGUIN E VALIDA 
 
-                session_start();
+                session_start(); // INICIA SESSION 
 
-                $email = $_POST['email'];
-                $senha = $_POST['senha'];
+                $email = $_POST['email']; // ENVIA O CONTEUDO DO INPUT PARA VARIAVEL 
+                $senha = $_POST['senha']; // ENVIA O CONTEUDO DO INPUT PARA VARIAVEL 
 
                 $_SESSION['email'] = $email;
 
-                if ($email == $email_bd && $senha == $senha_bd) {         // valida o loguin 
+                if ($email == $email_bd && $senha == $senha_bd) {   // COMPARA A TENTATIVA DE LOGUIN COM AS INFORMAÇÕES VINDAS DO BANCO 
 
-                    header('location: ./html/perfil.php');
+                    header('location: ./html/perfil.php'); // CASO VERDADEIRO ENVIAR PARA PAGINA HOME 
                 } else { ?>
-                    <p class="msg_senha_errada" >Email ou Senha Incorretos</p>
+                    <p class="msg_senha_errada" >Email ou Senha Incorretos</p> <!-- CASO FALSO MANTE NA MESMA TELA E INFORMA QUE LOGUIN ESTA ERRADO  -->
               <?php  }
             } ?>
 
@@ -56,7 +56,7 @@ $senha_bd = "123"; // Aqui sera um array conectado ao banco
             <a class="cadastro" href="html/cadastro.php">Criar Conta</a>
 
         </form>
-        <div id="senha_errada"> </div>
+        
     </main>
 
 </body>
