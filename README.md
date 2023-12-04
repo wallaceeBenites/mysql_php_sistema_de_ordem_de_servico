@@ -64,17 +64,17 @@ HTML - CSS - PHP - MySQL - JavaScript
 - Mascara Em JavaScript para os Inputs de numeros
   
 <p align="center" >
-     <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa8.JPG">
+     <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa9.JPG">
 </p>
 
 - Pop-ups de confirmação de ações importantes
 
 <p align="center" >
-     <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa8.JPG">
+     <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa11.JPG">
 </p>
 
 - Tabelas são trocadas por uma imagenm de lupa seguinda por mensagem de não encontrada, em caso de tabela vazia.
 
 <p align="center" >
-     <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa8.JPG">
+     <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa10.JPG">
 </p>
