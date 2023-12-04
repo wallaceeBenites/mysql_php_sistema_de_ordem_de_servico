@@ -3,7 +3,8 @@
 
 ## Sobre o Projeto
 ---
-Resultado do projeto integrador apresentado por mim no programa Transformace do Serasa Experian :
+- Resultado do projeto integrador apresentado por mim no programa Transformace do Serasa Experian 
+- Sistema de controle de Ordens de serviço, permite o setor da TI Visualizar informações dos Chamados e dos Solicitantes 
 ## Funcionalidades 
 ##### Cargo : Usuário
 - Permite o usuario se cadastrar no sistema
@@ -26,35 +27,35 @@ HTML - CSS - PHP - MySQL - JavaScript
 
 ## Imagem Previa 
 ---
-
+- Pagina de Loguin 
 <p align="center" >
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa1.JPG">
 </p>
-
+- Pagina de Cadastro
 <p align="center" >
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa2.JPG">
 </p>
-
+- Pagina de Home 
 <p align="center" >
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa3.JPG">
 </p>
-
+- Pagina de Abrir Chamado
 <p align="center" >
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa4.JPG">
 </p>
-
+- Pagina de Configurar 
 <p align="center" >
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa5.JPG">
 </p>
-
+- Pagina de Visualizar Configurções
 <p align="center" >
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa6.JPG">
 </p>
-
+- Pagina de Administrar Usuários
 <p align="center" >
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa7.JPG">
 </p>
-
+- Pagina de Editar Informações de Usuários
 <p align="center" >
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa8.JPG">
 </p>
