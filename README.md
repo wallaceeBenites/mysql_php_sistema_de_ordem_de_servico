@@ -74,7 +74,7 @@ HTML - CSS - PHP - MySQL - JavaScript
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa11.JPG">
 </p>
 
-- Tabelas são trocadas por uma imagenm de lupa seguinda por mensagem de não encontrada, em caso de tabela vazia.
+- Tabelas são trocadas por uma imagenm de lupa seguida por mensagem de não encontrada, em caso de tabela vazia.
 
 <p align="center" >
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa10.JPG">
