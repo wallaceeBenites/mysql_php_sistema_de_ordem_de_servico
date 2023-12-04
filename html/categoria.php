@@ -114,7 +114,7 @@ if ($_SESSION['id_cargo'] == 8) { // VERIFICA SE O CARGO QUE ESTA LOGADO É OQUE
 
             </div>
             <a class="link_visualizar" href="mostra_categoria.php"> Visualizar Categorias e Prioridades </a> <!-- BOTÃO TIPO LINK PARA ENCAMINAHR O USUARIO PARA TELA DE VISUALIZAR TABELAS DO INTENS INSERIDOS NO BANCO DE DADOS -->
-            <a class="link_visualizar" href="administra_usuarios.php"> Administrar Usuários </a> <!-- BOTÃO TIPO LINK PARA ENCAMINAHR O USUARIO PARA TELA DE ADMINISTRAR USUARIOS -->
+           
 
 
         </div>
