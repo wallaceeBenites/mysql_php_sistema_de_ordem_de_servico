@@ -1,7 +1,7 @@
 <?php
 require_once("conexao.php");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") { // RECEBE A INFORMAÇÃO DO FORMULARIO DE CRIAR CATEGORIA 
+if ($_SERVER["REQUEST_METHOD"] == "POST") { // VERIFICA SE O FORMULARIO FOI ENVIADO DEVIDAMENTE 
 
     $nome = mysqli_real_escape_string($conexao, $_POST["categoria"]);
 }

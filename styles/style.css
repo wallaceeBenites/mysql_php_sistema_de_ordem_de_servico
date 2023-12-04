@@ -94,6 +94,7 @@ body{
     width: 50%;
 }
 
+
 .pagina_loguin_input{
 
     padding: 10px;
@@ -104,9 +105,25 @@ body{
     outline: none;
     color: aliceblue;
     font-size: 1rem;
-    font-family: var(--font-principal);
+    font-family: var(--font-principal); 
 
 }
+
+.pagina_loguin_input_nome{
+
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px;
+    box-shadow: none;
+    background: none;
+    outline: none;
+    color: aliceblue;
+    font-size: 1rem;
+    font-family: var(--font-principal); 
+    text-transform: uppercase;
+
+}
+
 
 input::placeholder{
 
@@ -163,7 +180,7 @@ input::placeholder{
 
 .cabecalho_menu{
     display: flex;
-    gap: 10%;
+    gap: 5%;
         justify-content: center;
 
 }
@@ -545,4 +562,26 @@ td{
     color: rgb(238, 241, 233);
 }
 
+/* PAGINA ADIMISTRA USUARIO   */
 
+
+.tabela_adm_usuario{
+    
+    border: 1px solid whitesmoke;
+    padding: 100%;
+    border-radius: 12px;
+    width: 0%;
+    font-family: var(--font-principal);
+    font-weight: 400;
+    
+}
+
+.edição_usuario{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 2% 15%;
+    border-radius: 18px;
+    background-color: rgba(0,0,0,.5);
+    gap: 20px;
+}

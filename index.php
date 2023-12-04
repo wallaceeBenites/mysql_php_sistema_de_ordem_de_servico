@@ -1,9 +1,5 @@
 <?php
-
-
-$email_bd = "wallacepuck@gmail.com"; // Aqui sera um array conectado ao banco 
-$senha_bd = "123"; // Aqui sera um array conectado ao banco
-
+require_once("./php/conexao.php");
 
 ?>
 
@@ -20,9 +16,9 @@ $senha_bd = "123"; // Aqui sera um array conectado ao banco
 
 <body>
     <main class="pagina">
-        <form class="pagina_loguin" action="index.php" method="POST">
+        <form class="pagina_loguin" action="" method="POST">
 
-            
+
 
 
             <img class="pagina_loguin_logo" src="assets/logo (2).png">
@@ -34,29 +30,53 @@ $senha_bd = "123"; // Aqui sera um array conectado ao banco
                 <input class="pagina_loguin_input" type="password" name="senha" placeholder="Senha">
             </label>
 
-                <?php if (isset($_POST['bt_logar'])) { // RECEBE AS INFORMAÇÕES DOS INPUTS DE LOGUIN E VALIDA 
 
-                session_start(); // INICIA SESSION 
+            <?php if (isset($_POST['bt_logar'])) { // CONDICIONAL QUE VERIFICA SE EXISTE ALGUMA COISA SENDO ENVIADO PELO FORMULARIO 
 
-                $email = $_POST['email']; // ENVIA O CONTEUDO DO INPUT PARA VARIAVEL 
-                $senha = $_POST['senha']; // ENVIA O CONTEUDO DO INPUT PARA VARIAVEL 
+                $email = mysqli_real_escape_string($conexao, $_POST["email"]); // EVITA MYSQL INJECTION DOS INPUTS 
+                $senha = mysqli_real_escape_string($conexao, $_POST["senha"]); // EVITA MYSQL INJECTION DOS INPUTS
 
-                $_SESSION['email'] = $email;
+                $sql_valida = "SELECT * FROM usuario WHERE EMAIL = '$email' AND SENHA = '$senha'"; // PESQUISA USUARIO CORRESPONDENTE AO DADOS INSERIOS NO INPUT DE LOGUIN E SENHA 
+                $resultado_sql_valida = mysqli_query($conexao, $sql_valida);
+                $num_rows = mysqli_num_rows($resultado_sql_valida); // IDENTIFICA O NUMERO DE LINHAS DA PESQUISA, SE NÃO TIVER NENHUM USUARIO COM ESSAS INFORMAÇÕES DEVOLVE 0 
 
-                if ($email == $email_bd && $senha == $senha_bd) {   // COMPARA A TENTATIVA DE LOGUIN COM AS INFORMAÇÕES VINDAS DO BANCO 
+                if ($num_rows == 1) {   // COMPARA A TENTATIVA DE LOGUIN COM AS INFORMAÇÕES VINDAS DO BANCO 
 
+                    if(!isset($_SESSION)){ // SE NÃO TIVE SESSION 
+                        session_start(); // INICIA SESSION
+                    }
+
+                    $usuario_logado = mysqli_fetch_assoc($resultado_sql_valida); // PEGA TODAS A INFORMAÇÕES DO USUARIO 
+
+                    $_SESSION['nome'] = $usuario_logado['NOME']; // JOGA AS INFORMAÇÕES DO USUARIO LOGADO NA VARIAVEL GLOBAL 
+
+                    $_SESSION['email'] = $usuario_logado['EMAIL'];// JOGA AS INFORMAÇÕES DO USUARIO LOGADO NA VARIAVEL GLOBAL 
+
+                    $_SESSION['id_cargo'] = $usuario_logado['ID_CARGO'];// JOGA AS INFORMAÇÕES DO USUARIO LOGADO NA VARIAVEL GLOBAL 
+
+                    $_SESSION['telefone'] = $usuario_logado['TELEFONE'];// JOGA AS INFORMAÇÕES DO USUARIO LOGADO NA VARIAVEL GLOBAL
+                    
+                    $_SESSION['data_criacao'] = $usuario_logado['DATA_DE_CADASTRO'];// JOGA AS INFORMAÇÕES DO USUARIO LOGADO NA VARIAVEL GLOBAL
+
+                    $_SESSION['id_usuario'] = $usuario_logado['ID_USUARIO'];// JOGA AS INFORMAÇÕES DO USUARIO LOGADO NA VARIAVEL GLOBAL
+
+                        
                     header('location: ./html/perfil.php'); // CASO VERDADEIRO ENVIAR PARA PAGINA HOME 
-                } else { ?>
-                    <p class="msg_senha_errada" >Email ou Senha Incorretos</p> <!-- CASO FALSO MANTE NA MESMA TELA E INFORMA QUE LOGUIN ESTA ERRADO  -->
-              <?php  }
-            } ?>
+
+                }else{ ?>
+
+                    <p class="msg_senha_errada">Email ou Senha Incorretos</p>
+
+            <?php  } 
+                } ?>
+            
 
             <button class="pagina_loguin_bottom" type="submit" name="bt_logar">ENTRAR</button>
 
             <a class="cadastro" href="html/cadastro.php">Criar Conta</a>
 
         </form>
-        
+
     </main>
 
 </body>

@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
  require_once("conexao.php");
 
@@ -12,10 +13,9 @@
    
     $status_chamado = 6;
 
-    
     $data_atual = date('d/m/Y H:i:s', strtotime('-4 hour'));
 
-    $usuarioo = 8;
+    $usuarioo = $_SESSION['id_usuario'];
 
     
 }

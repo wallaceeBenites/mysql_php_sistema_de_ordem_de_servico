@@ -7,6 +7,15 @@ if (!isset($_SESSION['email'])) { // IDENTIFICA SE USUARIO FEZ O LOGUIN, SE NÃO
     header('Location: ../index.php');
 }
 
+if ($_SESSION['id_cargo'] == 8) { // VERIFICA SE O CARGO QUE ESTA LOGADO É OQUE TEM AUTORIZAÇÃO
+
+    //NADA
+
+} else {
+
+    header('Location: perfil.php');
+}
+
 
 require_once("../php/conexao.php");
 
@@ -46,6 +55,7 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
     <title>Categoria</title>
     <link rel="stylesheet" href="../styles/style.css">
 
+
 </head>
 
 <body>
@@ -57,7 +67,13 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
 
             <a class="cabecalho__menu__link" href="criar_os.php"> Abrir Chamado </a> <!-- LINK PAGINA Abrir Chamado(criar_os.php) -->
 
-            <a class="cabecalho__menu__link" href="categoria.php"> Configurações </a> <!-- LINK PAGINA Configurações(categoria.php) -->
+            <?php if ($_SESSION['id_cargo'] == 8) { ?> <!-- PERMITE O ACESSO SOMENTE PARA O CARGO ADM  -->
+
+                <a class="cabecalho__menu__link" href="categoria.php"> Configurações </a> <!-- LINK PAGINA Configurações(categoria.php) -->
+
+                <a class="cabecalho__menu__link" href="administra_usuarios.php"> Administrar Usuários </a>
+
+            <?php } ?>
 
             <a class="cabecalho__menu__link" href="../php/logout.php"> Sair </a> <!-- LINK PARA Sair(logout.php) -->
 
@@ -205,7 +221,7 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
                 <?php } ?>
 
 
-                
+
                 <?php if ($num_rows4 == 0) { ?> <!-- CONDICIONAL QUE FAZ APARECE UMA IMAGEM DE UMA LUPA CASO NÃO TENHA CONTEUDO PARA APARECER NA TABELA  -->
 
                     <div class="nenhum_resultado" id="aparece1">
@@ -250,7 +266,7 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
 
 
 
-            <a class="link_visualizar" href="categoria.php">Voltar </a>  <!-- LINK PARA VOLTAR A TELA DE INSERIR CONTEUDO DAS TABELAS  --> 
+            <a class="link_visualizar" href="categoria.php">Voltar </a> <!-- LINK PARA VOLTAR A TELA DE INSERIR CONTEUDO DAS TABELAS  -->
 
 
         </div>

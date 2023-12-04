@@ -4,7 +4,10 @@
     session_destroy();
 
 
-    header('Location: ../index.php');  // ENVIA PARA TELA DE LOGUIN APOS FEITO O LOGOUT 
+    die('<script type="text/javascript">
+        alert("Logout Realizado Com Sucesso!");
+        window.location.href = "../index.php";
+        </script>');
 
 
 
