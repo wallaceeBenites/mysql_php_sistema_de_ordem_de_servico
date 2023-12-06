@@ -7,17 +7,18 @@
 - Sistema de controle de Ordens de serviço, permite o setor da TI Visualizar informações dos Chamados e dos Solicitantes 
 ## Funcionalidades 
 ##### Cargo : Usuário
-- Permite o usuários se cadastrar no sistema
-- Realizar o Log in
-- Abrir ordens de serviço
+- Permite o usuários se cadastrar no sistema.
+- Realizar o Log in.
+- Abrir ordens de serviço.
 ##### Cargo : Técnico
-- Permite Realizar todas as Funcionalidades do cargo Usuário
+- Permite Realizar todas as Funcionalidades do cargo Usuário.
 - Permite o alterar o status e descrição do chamados.
 ##### Cargo : ADM
-- Permite Realizar todas as Funcionalidades do cargo Usuário e Técnico
-- Permite fazer alterações no chamado e deletar chamados
-- Permite configurar tabelas de opções de categoria, status, prioridade e cargo 
+- Permite Realizar todas as Funcionalidades do cargo Usuário e Técnico.
+- Permite fazer alterações no chamado e deletar chamados.
+- Permite configurar tabelas de opções de categoria, status, prioridade e cargo.
 - Permite Administrar Usuários, Alterando acesso atraves do cargo, alterando informações de cadastro e deletando usuários.
+- Permite Visualizar Relatórios de Status dos chamados.
   
  ## Linguagens Utilizadas
 ````
@@ -58,6 +59,10 @@ HTML - CSS - PHP - MySQL - JavaScript
 - Página de Editar Informações de Usuários
 <p align="center" >
      <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa8.JPG">
+</p>
+- Página de Visualizar Relatórios de Status dos chamados
+<p align="center" >
+     <img width="600" heigth="600" src="/assets/projeto_integrador_imagem_previa12.JPG">
 </p>
 
   ## Funcionalidades Extra

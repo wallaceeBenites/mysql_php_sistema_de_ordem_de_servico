@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/12/2023 às 12:25
+-- Tempo de geração: 06/12/2023 às 15:55
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -84,7 +84,12 @@ CREATE TABLE `chamado` (
 
 INSERT INTO `chamado` (`ID_CHAMADO`, `DESCRICAO_DO_CHAMADO`, `DATA_DE_ABERTURA`, `ID_USUARIO`, `ID_STATUS`, `ID_TIPO_SERVICO`, `ID_PRIORIDADE`) VALUES
 (66, 'Socorro não funciona', '06/12/2023 08:22:15', 8, 6, 26, 12),
-(67, 'Em nome de Jesus faça esse computador funcionar. ', '06/12/2023 08:22:49', 8, 6, 26, 8);
+(67, 'Em nome de Jesus faça esse computador funcionar..', '06/12/2023 08:22:49', 8, 6, 26, 8),
+(77, 'Esta saindo Fumaça ', '06/12/2023 11:03:19', 8, 10, 26, 8),
+(78, 'Joguei café no computador sem querer.', '06/12/2023 11:04:18', 8, 11, 26, 8),
+(79, 'Esqueci a senha do meu PC', '06/12/2023 11:06:00', 8, 12, 26, 8),
+(80, 'Preciso de ajuda eu sou maluco ', '06/12/2023 11:06:55', 8, 11, 26, 8),
+(81, 'Meu pc não ta bom ', '06/12/2023 11:07:23', 8, 6, 26, 8);
 
 -- --------------------------------------------------------
 
@@ -217,7 +222,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de tabela `chamado`
 --
 ALTER TABLE `chamado`
-  MODIFY `ID_CHAMADO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `ID_CHAMADO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT de tabela `prioridade`

@@ -58,7 +58,7 @@ $resultado_da_consulta2 = mysqli_query($conexao, $consulta2);
 
 <body>
 
-    <header class="cabecalho"> <!-- NAVEGADOR CABEÇALHO -->
+<header class="cabecalho"> <!-- NAVEGADOR CABEÇALHO -->
         <nav class="cabecalho_menu ">
 
             <a class="cabecalho__menu__link" href="perfil.php"> Home </a> <!-- LINK PAGINA Home(perfil.php) -->
@@ -71,14 +71,16 @@ $resultado_da_consulta2 = mysqli_query($conexao, $consulta2);
 
                 <a class="cabecalho__menu__link" href="administra_usuarios.php"> Administrar Usuários </a>
 
+                <a class="cabecalho__menu__link" href="graficos.php"> Relatorio </a> <!-- LINK PARA Sair(logout.php) -->
+
             <?php } ?>
+
 
             <a class="cabecalho__menu__link" href="../php/logout.php"> Sair </a> <!-- LINK PARA Sair(logout.php) -->
 
 
         </nav>
     </header>
-
 
 
     <main class="perfil">

@@ -31,7 +31,7 @@ if ($_SESSION['id_cargo'] == 8) { // VERIFICA SE O CARGO QUE ESTA LOGADO É OQUE
 
 <body>
 
-    <header class="cabecalho"> <!-- NAVEGADOR CABEÇALHO -->
+<header class="cabecalho"> <!-- NAVEGADOR CABEÇALHO -->
         <nav class="cabecalho_menu ">
 
             <a class="cabecalho__menu__link" href="perfil.php"> Home </a> <!-- LINK PAGINA Home(perfil.php) -->
@@ -44,14 +44,16 @@ if ($_SESSION['id_cargo'] == 8) { // VERIFICA SE O CARGO QUE ESTA LOGADO É OQUE
 
                 <a class="cabecalho__menu__link" href="administra_usuarios.php"> Administrar Usuários </a>
 
+                <a class="cabecalho__menu__link" href="graficos.php"> Relatorio </a> <!-- LINK PARA Sair(logout.php) -->
+
             <?php } ?>
+
 
             <a class="cabecalho__menu__link" href="../php/logout.php"> Sair </a> <!-- LINK PARA Sair(logout.php) -->
 
 
         </nav>
     </header>
-
 
 
 
@@ -114,7 +116,7 @@ if ($_SESSION['id_cargo'] == 8) { // VERIFICA SE O CARGO QUE ESTA LOGADO É OQUE
 
             </div>
             <a class="link_visualizar" href="mostra_categoria.php"> Visualizar Categorias e Prioridades </a> <!-- BOTÃO TIPO LINK PARA ENCAMINAHR O USUARIO PARA TELA DE VISUALIZAR TABELAS DO INTENS INSERIDOS NO BANCO DE DADOS -->
-           
+
 
 
         </div>

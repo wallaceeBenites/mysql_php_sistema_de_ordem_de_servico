@@ -38,7 +38,7 @@ $resultado_consulta_usuario = mysqli_query($conexao, $consulta_usuario);
 
 <body>
 
-    <header class="cabecalho"> <!-- NAVEGADOR CABEÇALHO -->
+<header class="cabecalho"> <!-- NAVEGADOR CABEÇALHO -->
         <nav class="cabecalho_menu ">
 
             <a class="cabecalho__menu__link" href="perfil.php"> Home </a> <!-- LINK PAGINA Home(perfil.php) -->
@@ -51,7 +51,10 @@ $resultado_consulta_usuario = mysqli_query($conexao, $consulta_usuario);
 
                 <a class="cabecalho__menu__link" href="administra_usuarios.php"> Administrar Usuários </a>
 
+                <a class="cabecalho__menu__link" href="graficos.php"> Relatorio </a> <!-- LINK PARA Sair(logout.php) -->
+
             <?php } ?>
+
 
             <a class="cabecalho__menu__link" href="../php/logout.php"> Sair </a> <!-- LINK PARA Sair(logout.php) -->
 
@@ -118,7 +121,7 @@ $resultado_consulta_usuario = mysqli_query($conexao, $consulta_usuario);
                                 <a class="bt_excluir" href="../php/excluir_usuario.php?ID_USUARIO=<?php echo $linha['ID_USUARIO']; ?>">⨂</a> <!-- LINK BOTÃO PARA ENCAMINHAR O CONTEUDO DA LINHA PARA EXCLUSÃO -->
 
                                 <a class="bt_editar" href="../html/edita_administra_usuarios.php?ID_USUARIO=<?php echo $linha['ID_USUARIO']; ?>">✎</a> <!-- LINK BOTÃO PARA ENCAMINHAR O CONTEUDO DA LINHA PARA EDIÇÃO -->
-                            </td> 
+                            </td>
                         </tr>
 
                     <?php } ?>

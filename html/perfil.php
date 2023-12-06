@@ -25,11 +25,12 @@ $num_rows = mysqli_num_rows($resultado_consulta_tabela_chamado); // IDENTIFICA O
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordem de serviço</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style.php">
 </head>
 
 <body>
 
-    <header class="cabecalho"> <!-- NAVEGADOR CABEÇALHO -->
+<header class="cabecalho"> <!-- NAVEGADOR CABEÇALHO -->
         <nav class="cabecalho_menu ">
 
             <a class="cabecalho__menu__link" href="perfil.php"> Home </a> <!-- LINK PAGINA Home(perfil.php) -->
@@ -42,7 +43,10 @@ $num_rows = mysqli_num_rows($resultado_consulta_tabela_chamado); // IDENTIFICA O
 
                 <a class="cabecalho__menu__link" href="administra_usuarios.php"> Administrar Usuários </a>
 
+                <a class="cabecalho__menu__link" href="graficos.php"> Relatorio </a> <!-- LINK PARA Sair(logout.php) -->
+
             <?php } ?>
+
 
             <a class="cabecalho__menu__link" href="../php/logout.php"> Sair </a> <!-- LINK PARA Sair(logout.php) -->
 
@@ -52,7 +56,7 @@ $num_rows = mysqli_num_rows($resultado_consulta_tabela_chamado); // IDENTIFICA O
 
     <main class="perfil">
 
-        <div class="conteiner">
+        <div class="conteiner9">
 
             <div class="pefil_chat_info">
 

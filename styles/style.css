@@ -180,7 +180,7 @@ input::placeholder{
 
 .cabecalho_menu{
     display: flex;
-    gap: 5%;
+    gap: 0.5%;
         justify-content: center;
 
 }
@@ -584,4 +584,11 @@ td{
     border-radius: 18px;
     background-color: rgba(0,0,0,.5);
     gap: 10px;
+}
+
+/* PAGINA GRAFICO   */
+
+.grafico{
+    width: 800px;
+    height: 800px;
 }
