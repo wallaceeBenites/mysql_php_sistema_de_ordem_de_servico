@@ -69,7 +69,7 @@ if ($_SESSION['id_cargo'] == 8) { // VERIFICA SE O CARGO QUE ESTA LOGADO É OQUE
                 <form class="categoria" id="" action="../php/processa_formulario_categoria.php" method="post"> <!-- FORMULARIO PARA CRIAR TIPO DE CATEGORIA  -->
 
                     <label>
-                        <input class="categoria_input" type="text" name="categoria" placeholder="Adicionar Categoria ">
+                        <input class="categoria_input" type="text" name="categoria" placeholder="Adicionar Categoria " required>
                     </label>
 
                     <button onclick="escreve_alerta_categoria()" class="categoria_buttom" type="submit" name="bt_categoria">Inserir Categoria</button>
@@ -78,7 +78,7 @@ if ($_SESSION['id_cargo'] == 8) { // VERIFICA SE O CARGO QUE ESTA LOGADO É OQUE
 
                 <form class="prioridade_form" id="" action="../php/processa_formulario_prioridade.php" method="post"> <!-- FORMULARIO PARA CRIAR TIPO DE PRIORIDADE  -->
                     <label>
-                        <input class="categoria_input" type="text" name="prioridade" placeholder="Adicionar Prioridade ">
+                        <input class="categoria_input" type="text" name="prioridade" placeholder="Adicionar Prioridade " required>
                     </label>
 
                     <button onclick="escreve_alerta_prioridade()" class="categoria_buttom" type="submit" name="bt_prioridade">Inserir Prioridade</button>
@@ -89,7 +89,7 @@ if ($_SESSION['id_cargo'] == 8) { // VERIFICA SE O CARGO QUE ESTA LOGADO É OQUE
 
                 <form class="prioridade_form" id="" action="../php/processa_formulario_status.php" method="post"> <!-- FORMULARIO PARA CRIAR TIPO DE STATUS (EXEMPLO CHAMADO CONCLUIDO ETC..)  -->
                     <label>
-                        <input class="categoria_input" type="text" name="status" placeholder="Adicionar Status ">
+                        <input class="categoria_input" type="text" name="status" placeholder="Adicionar Status " required>
                     </label>
 
                     <button onclick="escreve_alerta_status()" class="categoria_buttom" type="submit" name="bt_status">Inserir Status</button>
@@ -100,7 +100,7 @@ if ($_SESSION['id_cargo'] == 8) { // VERIFICA SE O CARGO QUE ESTA LOGADO É OQUE
 
                 <form class="prioridade_form" id="" action="../php/processa_formulario_cargo.php" method="post"> <!-- FORMULARIO PARA CRIAR CARGO(ADM, TÉCNICO ETC ... ) -->
                     <label>
-                        <input class="categoria_input" type="text" name="cargo" placeholder="Adicionar Cargo ">
+                        <input class="categoria_input" type="text" name="cargo" placeholder="Adicionar Cargo " required>
                     </label>
 
                     <button onclick="escreve_alerta_cargo()" class="categoria_buttom" type="submit" name="bt_prioridade">Inserir Cargo</button>

@@ -24,10 +24,10 @@ require_once("./php/conexao.php");
             <img class="pagina_loguin_logo" src="assets/logo (2).png">
 
             <label>
-                <input class="pagina_loguin_input" type="email" name="email" placeholder="EMAIL">
+                <input class="pagina_loguin_input" type="email" name="email" placeholder="Email" required>
             </label>
             <label>
-                <input class="pagina_loguin_input" type="password" name="senha" placeholder="Senha">
+                <input class="pagina_loguin_input" type="password" name="senha" placeholder="Senha" required>
             </label>
 
 

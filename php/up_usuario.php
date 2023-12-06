@@ -8,7 +8,7 @@
 
     $select_cargo = mysqli_real_escape_string($conexao, $_POST['select_cargo']); // RECEBE A INFORMAÇÃO DO FORMULARIO DE EDIÇÃO DE CHAMADO 
 
-    $name = mysqli_real_escape_string($conexao, $_POST["cadastro_input_name"]); // RECEBE A INFORMAÇÃO DO FORMULARIO DE EDIÇÃO DE CHAMADO 
+    $name = mysqli_real_escape_string($conexao, strtoupper($_POST["cadastro_input_name"])); // RECEBE A INFORMAÇÃO DO FORMULARIO DE EDIÇÃO DE CHAMADO 
 
     $email = mysqli_real_escape_string($conexao, $_POST["cadastro_input_email"]); // RECEBE A INFORMAÇÃO DO FORMULARIO DE EDIÇÃO DE CHAMADO 
 

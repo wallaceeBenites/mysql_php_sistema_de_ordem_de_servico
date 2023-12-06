@@ -105,13 +105,13 @@ $resultado_da_consulta3 = mysqli_query($conexao, $consulta3);
 
                     </select>
 
-                    <input class="pagina_loguin_input_nome" name="cadastro_input_name" type="text" placeholder="Nome de Usuário" maxlength="100" value="<?php echo @$linha_input['NOME']; ?>">
+                    <input class="pagina_loguin_input_nome" name="cadastro_input_name" type="text" placeholder="Nome de Usuário" maxlength="100" value="<?php echo @$linha_input['NOME']; ?>" required>
 
-                    <input class="pagina_loguin_input" name="cadastro_input_email" type="email" placeholder="Email" maxlength="50" value="<?php echo @$linha_input['EMAIL']; ?>">
+                    <input class="pagina_loguin_input" name="cadastro_input_email" type="email" placeholder="Email" maxlength="50" value="<?php echo @$linha_input['EMAIL']; ?>" required>
 
-                    <input class="pagina_loguin_input" name="cadastro_input_senha" type="text" placeholder="Senha" maxlength="20" value="<?php echo @$linha_input['SENHA']; ?>">
+                    <input class="pagina_loguin_input" name="cadastro_input_senha" type="text" placeholder="Senha" maxlength="20" value="<?php echo @$linha_input['SENHA']; ?>" required>
 
-                    <input class="pagina_loguin_input" id="telefone" name="cadastro_input_telefone" type="tel" placeholder="Telefone" maxlength="15" value="<?php echo @$linha_input['TELEFONE']; ?>">
+                    <input class="pagina_loguin_input" id="telefone" name="cadastro_input_telefone" type="tel" placeholder="Telefone" maxlength="15" value="<?php echo @$linha_input['TELEFONE']; ?>" required>
 
                     <button onclick="escreve_alerta_chamado_editado()" class="descricao_bottom" type="submit" name="bt_editar_usuario">Editar Chamado</button>
 

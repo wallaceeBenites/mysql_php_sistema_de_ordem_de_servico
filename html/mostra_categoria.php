@@ -114,7 +114,7 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
 
 
 
-                            <th> Nome Categoria </th>
+                            <th> Categoria </th>
                             <th>Ações</th>
 
                         </tr>
@@ -126,7 +126,11 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
 
 
                                 <td><?php echo htmlspecialchars($linha['NOME_AREA_SERVICO'], ENT_QUOTES, 'UTF-8');  ?></td>
-                                <td> <a class="bt_excluir" href="../php/escluir_categoria.php?ID_TIPO_SERVICO=<?php echo $linha['ID_TIPO_SERVICO']; ?>">⨂</a> </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
+                                <td>
+                                    <a class="bt_editar" href="../html/editar_config_categoria.php?ID_TIPO_SERVICO=<?php echo $linha['ID_TIPO_SERVICO']; ?>">✎</a> <!-- LINK BOTÃO PARA ENCAMINHAR O CONTEUDO DA LINHA PARA EDIÇÃO -->
+
+                                    <a class="bt_excluir" href="../php/escluir_categoria.php?ID_TIPO_SERVICO=<?php echo $linha['ID_TIPO_SERVICO']; ?>">⨂</a>
+                                </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
                             </tr>
 
                         <?php } ?>
@@ -156,7 +160,7 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
 
 
 
-                            <th>Nome Prioridade</th>
+                            <th>Prioridade</th>
                             <th>Ações</th>
 
                         </tr>
@@ -166,7 +170,10 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
                             <tr>
 
                                 <td> <?php echo htmlspecialchars($linha['NOME_PRIORIDADE'], ENT_QUOTES, 'UTF-8'); ?> </td>
-                                <td> <a class="bt_excluir" href="../php/escluir_prioridade.php?ID_PRIORIDADE=<?php echo $linha['ID_PRIORIDADE']; ?>">⨂</a> </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
+                                <td>
+                                    <a class="bt_editar" href="../html/editar_config_prioridade.php?ID_PRIORIDADE=<?php echo $linha['ID_PRIORIDADE']; ?>">✎</a> <!-- LINK BOTÃO PARA ENCAMINHAR O CONTEUDO DA LINHA PARA EDIÇÃO -->
+                                    <a class="bt_excluir" href="../php/escluir_prioridade.php?ID_PRIORIDADE=<?php echo $linha['ID_PRIORIDADE']; ?>">⨂</a>
+                                </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
 
                             </tr>
 
@@ -198,7 +205,7 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
 
 
 
-                            <th> Nome Status </th>
+                            <th>  Status </th>
                             <th>Ações</th>
 
                         </tr>
@@ -210,7 +217,11 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
 
 
                                 <td><?php echo htmlspecialchars($linha['NOME_STATUS'], ENT_QUOTES, 'UTF-8');  ?></td>
-                                <td> <a class="bt_excluir" href="../php/escluir_status.php?ID_STATUS=<?php echo $linha['ID_STATUS']; ?>">⨂</a> </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
+                                <td>
+                                    <a class="bt_editar" href="../html/editar_config_status.php?ID_STATUS=<?php echo $linha['ID_STATUS']; ?>">✎</a> <!-- LINK BOTÃO PARA ENCAMINHAR O CONTEUDO DA LINHA PARA EDIÇÃO -->
+
+                                    <a class="bt_excluir" href="../php/escluir_status.php?ID_STATUS=<?php echo $linha['ID_STATUS']; ?>">⨂</a>
+                                </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
                             </tr>
 
                         <?php } ?>
@@ -240,7 +251,7 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
 
 
 
-                            <th>Nome Cargo</th>
+                            <th> Cargo</th>
                             <th>Ações</th>
 
                         </tr>
@@ -252,7 +263,10 @@ $num_rows4 = mysqli_num_rows($resultadoConsulta4); // IDENTIFICA O NUMERO DE LIN
 
 
                                 <td> <?php echo htmlspecialchars($linha['NOME_CARGO'], ENT_QUOTES, 'UTF-8');  ?> </td>
-                                <td> <a class="bt_excluir" href="../php/escluir_cargo.php?ID_CARGO=<?php echo $linha['ID_CARGO']; ?>">⨂</a> </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
+                                <td>
+                                    <a class="bt_editar" href="../html/editar_config_cargo.php?ID_CARGO=<?php echo $linha['ID_CARGO']; ?>">✎</a> <!-- LINK BOTÃO PARA ENCAMINHAR O CONTEUDO DA LINHA PARA EDIÇÃO -->
+                                    <a class="bt_excluir" href="../php/escluir_cargo.php?ID_CARGO=<?php echo $linha['ID_CARGO']; ?>">⨂</a>
+                                </td> <!-- LINK PARA ENVIAR INFORMAÇÕES DA TABELA PARA O ARQUIVO DE EXCLUIR LINHA "escluir_categoria.php" -->
                             </tr>
 
                         <?php } ?>

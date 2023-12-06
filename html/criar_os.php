@@ -175,7 +175,7 @@ $resultado_da_consulta2 = mysqli_query($conexao, $consulta2);
 
                 <div class="descricao">
                     <!-- TEXTAREA QUE ENVIAR DESCRIÇÃO DO CHAMADO OU TEXTO MODIFICADO CASO SEJA UMA EDIÇÃO  -->
-                    <textarea maxlength="150" class="descricao_textarea" type="text" name="descrição_input" id="" rows="5" cols="50" placeholder=" Faça uma descrição do problema, Maximo 150 letras..."><?php echo @$linha_textarea['DESCRICAO_DO_CHAMADO']; ?></textarea> <!--  @$linha_textarea SERVE PARA MOSTRA O TEXTO DO CHAMADO QUE VAI SER EDITADO -->
+                    <textarea maxlength="150" class="descricao_textarea" type="text" name="descrição_input" id="" rows="5" cols="50" placeholder=" Faça uma descrição do problema, Maximo 150 letras..." required><?php echo @$linha_textarea['DESCRICAO_DO_CHAMADO']; ?></textarea> <!--  @$linha_textarea SERVE PARA MOSTRA O TEXTO DO CHAMADO QUE VAI SER EDITADO -->
 
                     <!-- CONDICIONAL QUE MOSTRA BOTÃO DE CRIAR O CHAMADO QUANDO FOR CRIAR CHAMADO E BOTÃO EDITAR E LINK VOLTAR PARA QUANDO FOR EDITAR CHAMADO  -->
                     <?php if (!$id_chamado) { ?> <button onclick="escreve_alerta_chamado()" class="descricao_bottom" type="submit" name="bt_editar_chamado">Criar Chamado</button> <?php } else { ?> <a class="link_visualizar" href="perfil.php"> VOLTAR </a> <button onclick="escreve_alerta_chamado_editado()" class="descricao_bottom" type="submit" name="bt_criar_chamado">Editar Chamado</button> <?php }  ?>

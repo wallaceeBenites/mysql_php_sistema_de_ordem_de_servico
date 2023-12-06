@@ -15,15 +15,15 @@
 
             <img class="pagina_loguin_logo" src="../assets/logo (2).png">
             
-            <input class="pagina_loguin_input_nome" name="cadastro_input_name" type="text" placeholder="Nome de Usuário" maxlength="100">
+            <input class="pagina_loguin_input_nome" name="cadastro_input_name" type="text" placeholder="Nome de Usuário" maxlength="100" required>
 
-            <input class="pagina_loguin_input" name="cadastro_input_email" type="email" placeholder="Email" maxlength="50" >
+            <input class="pagina_loguin_input" name="cadastro_input_email" type="email" placeholder="EMAIL" maxlength="50" required>
 
-            <input class="pagina_loguin_input" name="cadastro_input_senha" type="password" placeholder="Senha" maxlength="20">       
+            <input class="pagina_loguin_input" name="cadastro_input_senha" type="password" placeholder="SENHA" maxlength="20" required>       
 
-            <input class="pagina_loguin_input" id="telefone" name="cadastro_input_telefone" type="tel" placeholder="Telefone" maxlength="15">
+            <input class="pagina_loguin_input" id="telefone" name="cadastro_input_telefone" type="tel" placeholder="TELEFONE" maxlength="15" required>
 
-            <button class="pagina_loguin_bottom" type="submit" name="bt_criar_conta"  >CRIAR</button>
+            <button class="pagina_loguin_bottom" type="submit" name="bt_criar_conta" >CRIAR</button>
             
             
             <a class="cadastro" href="../index.php">Já tem Conta? Entrar </a>
