@@ -24,7 +24,7 @@ $num_rows = mysqli_num_rows($resultado_consulta_tabela_chamado); // IDENTIFICA O
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
      <?php if($num_rows < 4){ ?>  <!--  CONDICIONAL PARA COLCOAR O VH SO QUANDO TIVER MAIS DE 3 LINHAS  -->
         height: 100vh;
         <?php } ?>
