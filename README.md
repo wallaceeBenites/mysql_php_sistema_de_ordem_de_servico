@@ -20,7 +20,7 @@
 - Permite Administrar Usuários, Alterando acesso atraves do cargo, alterando informações de cadastro e deletando usuários.
 - Permite Visualizar Relatórios de Status dos chamados.
   
- ## Linguagens Utilizadas
+ ## Tecnologias Utilizadas
 ````
 HTML - CSS - PHP - MySQL - JavaScript
 
